@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify Barebones Layout</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+        #container {
+            display: flex;
+            flex: 1;
+            overflow: hidden;
+        }
+        #sidebar {
+            width: 200px;
+            background-color: #181818;
+            color: white;
+            padding: 20px;
+        }
+        #main-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+        #navbar {
+            background-color: #282828;
+            padding: 10px;
+            color: white;
+        }
+        #content {
+            flex: 1;
+            overflow-y: auto;
+            padding: 20px;
+            background-color: #121212;
+            color: white;
+        }
+        #footer {
+            background-color: #282828;
+            padding: 10px;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="sidebar">
+            <h2>Sidebar</h2>
+            <ul>
+                <li>Home</li>
+                <li>Search</li>
+                <li>Your Library</li>
+            </ul>
+        </div>
+        <div id="main-content">
+            <div id="navbar">
+                <h1>Spotify</h1>
+            </div>
+            <div id="content">
+                <h2>Main Content</h2>
+                <p>This is where your content will go.</p>
+            </div>
+            <div id="footer">
+                <p>Footer</p>
+                <p>Player Controls</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
