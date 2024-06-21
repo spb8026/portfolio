@@ -1,4 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap');
+
+
+:root {
+    --main-red: #C22222;
+    --background-brown: #342A21;
+    --beige-text: #EAF0CE;
+    --accent-silver: #C0C5C1;
+    --accent-black: #0C0C0C;
+}
+
+h1, h2, h3, h4, h5, h6{
+    margin: 0;
+    font-family: 'PT Sans Narrow', sans-serif;
+    color: #EAF0CE;
+}
+
+p {
+    color: #C22222;
+    font-family: 'Titillium Web', sans-serif; /* Fallback to sans-serif if Titillium Web is not available */
+}
+
 body {
     margin: 0;
-    overflow: hidden;
+    overflow: hidden; /* Adjust as needed */
 }

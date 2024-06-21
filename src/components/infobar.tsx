@@ -20,14 +20,14 @@ export default function Infobar() {
 
     const styles = {
         containertemp: {
-            width: "30vw",
+            width: "20vw",
             height: "100vh",
             scrollbars: "hidden",
+            backgroundColor: '#0C0C0C',
         },
         container: {
             width: "100%",
             height: "100%",
-            backgroundColor: "grey",
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
@@ -58,7 +58,7 @@ export default function Infobar() {
         },
         bottombarContainer: {
             width: "100%",
-            height: "5%",
+            height: "8%",
         },
         techStackContainer: {
             display: "flex",
@@ -70,8 +70,9 @@ export default function Infobar() {
         aboutContainer : {
             width: "90%",
             height: "30%",
-            backgroundColor: "white",
+            backgroundColor: "#342A21",
             borderRadius: "10px",
+            padding:   "2%",
         }
     };
 
@@ -79,7 +80,7 @@ export default function Infobar() {
         <div style={styles.containertemp}>
             <div style={styles.container}>
                 <div style={styles.topbarContainer}>
-                    <p>Everything</p>
+                    <h3>Everything</h3>
                     <FontAwesomeIcon icon={faCircleXmark} style={{ paddingRight: "10px" }} />
                 </div>
 
@@ -88,12 +89,12 @@ export default function Infobar() {
                 </div>
 
                 <div style={styles.bottombarContainer}>
-                    <p style={{ margin: "0", fontSize: "1.25em", fontWeight: "bold" }}>Music</p>
-                    <p style={{ margin: "0", fontSize: "1em" }}>Description</p>
+                    <h4 style={{ margin: "0", fontSize: "1.25em", fontWeight: "bold" }}>Music</h4>
+                    <h5 style={{ margin: "0", fontSize: "1em" }}>Description</h5>
                 </div>
 
                 <div style={styles.aboutContainer}>
-                    <p>About the Project</p>
+                    <h4 style={{ margin: "5px" }}>About the Project</h4>
                     <div style={styles.techStackContainer}>
                         {techStack.map((tech, index) => (
                             <div key={index}>
@@ -107,7 +108,7 @@ export default function Infobar() {
 
                 {showCredits && (
                     <div>
-                        <p>Credits</p>
+                        <h4>Credits</h4>
                         {credits.map((credit, index) => (
                             <p key={index}>{credit}</p>
                         ))}

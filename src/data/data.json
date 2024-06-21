@@ -1,0 +1,45 @@
+{
+    "playlists": [
+      {
+        "id": "skills",
+        "title": "Skills",
+        "description": "List of skills I have used",
+        "icon": "faMusic",
+        "songs": [
+          {
+            "id": "angular",
+            "title": "Angular",
+            "description": "Built the cart portion of an e-store for my SWEN-261 project",
+            "links": ["**SWENSTORE"],
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/1200px-Angular_full_color_logo.svg.png"
+          },
+          {
+            "id": "nodejs",
+            "title": "Node.js",
+            "description": "Built part of a backend API for my SWEN-261 project",
+            "links": ["**SWENSTORE"],
+            "image": "https://miro.medium.com/v2/resize:fit:900/1*TY9uBBO9leUbRtlXmQBiug.png"
+          }
+        ]
+      },
+      {
+        "id": "projects",
+        "title": "Projects",
+        "description": "Highlight projects I have worked on",
+        "icon": "faProjectDiagram",
+        "songs": [
+          {
+            "id": "project1",
+            "title": "Project 1",
+            "description": "Description of Project 1"
+          },
+          {
+            "id": "project2",
+            "title": "Project 2",
+            "description": "Description of Project 2"
+          }
+        ]
+      }
+    ]
+  }
+  
