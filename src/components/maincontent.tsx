@@ -54,7 +54,7 @@ const playlists = [
   
   const styles = {
     container: {
-      maxWidth: '90vw',
+      maxWidth: '100%',
       margin: '0 auto',
       padding: '20px',
       backgroundColor: '#1a1a1a',
