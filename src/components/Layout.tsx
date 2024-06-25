@@ -60,6 +60,7 @@ export default function Layout({ children, data }: LayoutProps) {
       flexDirection: "column",
       overflowY: "auto",
       position: "relative",
+      transition: "flex 0.3s", // Add transition for smooth shrinking
     },
     playbarContainer: {
       flex: "0 0 6vh",
@@ -84,7 +85,12 @@ export default function Layout({ children, data }: LayoutProps) {
       <div style={styles.sidebarContainer}>
         <Sidebar />
       </div>
-      <div style={styles.mainContainer}>
+      <div
+        style={{
+          ...styles.mainContainer,
+          flex: showInfobar ? "0 0 70vw" : "1", // Adjust flex based on infobar visibility
+        }}
+      >
         {children}
         <button style={styles.playButton} onClick={handlePlayButtonClick}>
           Play

@@ -7,7 +7,7 @@ import { useState } from "react";
 
 // Define the Song type based on your JSON data structure
 
-export default function Song({ song }: { song: SongType }) {
+export default function Song({ song }: { song: Song }) {
     // Assign a default song from data
     const defaultSong = data.playlists[0].songs[0];
 
