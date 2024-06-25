@@ -3,11 +3,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 
 import data from "../data/data.json";
+import Song from "@/components/song";
 
 
 export default function AboutMe() {
 
-    const playlists = data.playlists[0];
+    const currentPlaylist = data.playlists[0];
 
     const styles = {
 
@@ -29,7 +30,7 @@ export default function AboutMe() {
             flexDirection: "row",
             justifyContent: "center",
             gap: "20px",
-            background: "linear-gradient(10deg, #0C0C0C, #0C0C0C, #C22222)", // Correct gradient syntax
+            background: "linear-gradient(10deg, #0C0C0C, #0C0C0C, #C0C5C1)", // Correct gradient syntax
         },
         infosubContainer: {
             width: "30%",
@@ -60,7 +61,9 @@ export default function AboutMe() {
 
                 <div style={styles.infosubContainer}>
                         <h2>In the Works</h2>
-
+                        {currentPlaylist.songs.map((song, index) => (
+                            <Song key={index} song={song} />
+                        ))}
                     </div>
 
                     <div style={styles.infosubContainer}>
