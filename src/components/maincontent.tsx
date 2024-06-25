@@ -1,4 +1,5 @@
 import { faPerson } from "@fortawesome/free-solid-svg-icons";
+import { height } from "@fortawesome/free-solid-svg-icons/fa0";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from 'next/image';
 
@@ -31,8 +32,8 @@ const MainContent = () => {
         <div style={styles.playlistInfo}>
           <h1 style={styles.title}>Shawn Brodeick - Software Engineer / Computer Science Student</h1>
           <p style={styles.description}>Welcome to my Spotify inspired portfolio!</p>
-          <button style={styles.playButton}>Play</button>
-          <button style={styles.followButton}>Follow</button>
+          <button style={styles.playButton}>About Me</button>
+          <button style={styles.followButton}>About this Project</button>
         </div>
       </div>
 
@@ -51,6 +52,7 @@ const MainContent = () => {
 const styles = {
   container: {
     maxWidth: '100%',
+    height: '100vh',
     margin: '0 auto',
     padding: '20px',
     backgroundColor: '#342A21',

@@ -3,61 +3,101 @@ import Playbar from "@/components/playbar";
 import MainContent from "@/components/maincontent";
 import Infobar from "@/components/infobar";
 import { useState } from "react";
+import { Data, Playlist, Song } from "../models"; // Adjust the import path as per your project structure
 
 export default function Home() {
-    const [showInfobar, setShowInfobar] = useState(false);
+  const data: Data = require('../data/data.json'); // Assuming data.json contains your playlist data
 
-    const handlePlayButtonClick = () => {
-        setShowInfobar(!showInfobar);
-    };
+  const [showInfobar, setShowInfobar] = useState(false);
+  const [currentPlaylist, setCurrentPlaylist] = useState(data.playlists[0]);
+  const [currentSong, setCurrentSong] = useState(currentPlaylist.songs[0]);
 
-    const styles = {
-        container: {
-            display: "flex",
-            flexDirection: "row",
-            height: "100vh",
-        },
-        sidebarContainer: {
-            flex: "0 0 6vw",
-        },
-        mainContainer: {
-            flex: "1",
-            display: "flex",
-            flexDirection: "column",
-            overflowY: "auto",
-            position: "relative",
-        },
-        playbarContainer: {
-            flex: "0 0 6vh",
-            position: "absolute",
-            bottom: 0,
-            width: "100%",
-        },
-        playButton: {
-            position: "absolute",
-            bottom: "10vh",
-            right: "10vw",
-            zIndex: 1001,
-            padding: "10px 20px",
-            border: "none",
-            borderRadius: "5px",
-            cursor: "pointer",
-        }
-    };
+  const handlePlayButtonClick = () => {
+    setShowInfobar(!showInfobar);
+  };
 
-    return (
-        <div style={styles.container}>
-            <div style={styles.sidebarContainer}>
-                <Sidebar />
-            </div>
-            <div style={styles.mainContainer}>
-                <MainContent />
-                <button style={styles.playButton} onClick={handlePlayButtonClick}>Play</button>
-            </div>
-            <div style={styles.playbarContainer}>
-                <Playbar />
-            </div>
-            {showInfobar && <Infobar />}
-        </div>
-    );
+  const handleSongChange = (curSong: Song) => {
+    setCurrentSong(curSong);
+  };
+
+  const handleSongForward = () => {
+    const currentIndex = currentPlaylist.songs.indexOf(currentSong);
+    const nextIndex = currentIndex + 1;
+
+    if (nextIndex < currentPlaylist.songs.length) {
+      handleSongChange(currentPlaylist.songs[nextIndex]);
+    } else {
+      // Wrap around to the first song
+      handleSongChange(currentPlaylist.songs[0]);
+    }
+  };
+
+  const handleSongBackward = () => {
+    const currentIndex = currentPlaylist.songs.indexOf(currentSong);
+    const prevIndex = currentIndex - 1;
+
+    if (prevIndex >= 0) {
+      handleSongChange(currentPlaylist.songs[prevIndex]);
+    } else {
+      // Wrap around to the last song
+      handleSongChange(currentPlaylist.songs[currentPlaylist.songs.length - 1]);
+    }
+  };
+
+  const styles = {
+    container: {
+      display: "flex",
+      flexDirection: "row",
+      height: "100vh",
+    },
+    sidebarContainer: {
+      flex: "0 0 6vw",
+    },
+    mainContainer: {
+      flex: "1",
+      display: "flex",
+      flexDirection: "column",
+      overflowY: "auto",
+      position: "relative",
+    },
+    playbarContainer: {
+      flex: "0 0 6vh",
+      position: "absolute",
+      bottom: 0,
+      width: "100%",
+    },
+    playButton: {
+      position: "absolute",
+      bottom: "10vh",
+      right: "10vw",
+      zIndex: 1001,
+      padding: "10px 20px",
+      border: "none",
+      borderRadius: "5px",
+      cursor: "pointer",
+    },
+  };
+
+  return (
+    <div style={styles.container}>
+      <div style={styles.sidebarContainer}>
+        <Sidebar />
+      </div>
+      <div style={styles.mainContainer}>
+        <MainContent />
+        <button style={styles.playButton} onClick={handlePlayButtonClick}>
+          Play
+        </button>
+      </div>
+      <div style={styles.playbarContainer}>
+        <Playbar
+          curSong={currentSong}
+          curPlaylist={currentPlaylist}
+          onSongForward={handleSongForward}
+          onSongBackward={handleSongBackward}
+        />
+      </div>
+      {showInfobar && <Infobar curSong={currentSong} curPlaylist={currentPlaylist}/>}
+    </div>
+  );
 }

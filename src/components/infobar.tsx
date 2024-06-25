@@ -2,20 +2,19 @@ import { faCircleXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from 'next/image';
 
-export default function Infobar() {
 
-    const techStack = [
-        { name: "React", image: '/next.svg' },
-        { name: "NextJS", image: '/next.svg' }
-    ];
+interface infoBarProps {
+    curSong: Song;
+    curPlaylist: Playlist;
+  }
 
-    const showCredits = true;
+export default function Infobar({curSong,curPlaylist}: infoBarProps) {
 
-    const credits = [
-        "Front End developed by Real Name",
-        "Backend developed by Real Name",
-        "Database developed by Real Name",
-    ]
+
+    const techStack = curSong.techStack;
+    const credits = curSong.credits;
+
+    
 
 
     const styles = {
@@ -80,17 +79,17 @@ export default function Infobar() {
         <div style={styles.containertemp}>
             <div style={styles.container}>
                 <div style={styles.topbarContainer}>
-                    <h3>Everything</h3>
+                    <h3>{curPlaylist.title}</h3>
                     <FontAwesomeIcon icon={faCircleXmark} style={{ paddingRight: "10px" }} />
                 </div>
 
                 <div style={styles.imageWrapper}>
-                    <Image src='/next.svg' alt="Music-Image" layout="fill" style={styles.image} />
+                    <Image src={curSong.image} alt={curSong.title} layout="fill" style={styles.image} />
                 </div>
 
                 <div style={styles.bottombarContainer}>
-                    <h4 style={{ margin: "0", fontSize: "1.25em", fontWeight: "bold" }}>Music</h4>
-                    <h5 style={{ margin: "0", fontSize: "1em" }}>Description</h5>
+                    <h4 style={{ margin: "0", fontSize: "1.25em", fontWeight: "bold" }}>{curSong.title}</h4>
+                    <h5 style={{ margin: "0", fontSize: "1em" }}>{curSong.description}</h5>
                 </div>
 
                 <div style={styles.aboutContainer}>
@@ -103,10 +102,10 @@ export default function Infobar() {
                             </div>
                         ))}
                     </div>
-                    <p>DESCRUIOSNAas fhasbfysabfujia ahj fhasbfhansjfnsjifhnabs</p>
+                    <p>{curSong.description}</p>
                 </div>
 
-                {showCredits && (
+                {(credits && credits.length > 0) && (
                     <div>
                         <h4>Credits</h4>
                         {credits.map((credit, index) => (
