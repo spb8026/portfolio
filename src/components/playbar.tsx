@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBackwardStep, faForwardStep, faMusic, faPause, faUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
+import { faBackwardStep, faForwardStep, faPause, faUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 import { Song, Playlist } from '../models'; // Adjust the import path as per your project structure
 
 interface PlaybarProps {
@@ -8,9 +8,10 @@ interface PlaybarProps {
   curPlaylist: Playlist;
   onSongForward: () => void;
   onSongBackward: () => void;
+  onPlayButtonClick: () => void; // Add this prop for handling infobar toggle
 }
 
-const Playbar = ({ curSong, curPlaylist, onSongForward, onSongBackward }: PlaybarProps) => {
+const Playbar = ({ curSong, curPlaylist, onSongForward, onSongBackward, onPlayButtonClick }: PlaybarProps) => {
 
   const playbarStyle = {
     width: '100%',
@@ -51,7 +52,9 @@ const Playbar = ({ curSong, curPlaylist, onSongForward, onSongBackward }: Playba
   return (
     <div style={playbarStyle}>
       <div style={songInfoStyle}>
-        <Image src={curSong.image} alt="Music-Image" width={100} height={100} style={{ display: 'inline', margin: '5px' }} />
+        <div style={{ width: '40px', height: '40px', position: 'relative', marginRight: '20px', marginLeft: '5px' }}>
+          <Image src={curSong.image} alt="Music-Image" width={50} height={50} style={{ display: 'inline' }} />
+        </div>
         <div style={{ display: 'flex', flexDirection: 'column' }}>
           <p style={{ margin: '0px' }}>{curSong.title}</p>
           <p style={descriptionStyle}>{curSong.description}</p>
@@ -63,7 +66,7 @@ const Playbar = ({ curSong, curPlaylist, onSongForward, onSongBackward }: Playba
         <FontAwesomeIcon icon={faForwardStep} style={iconStyle} onMouseEnter={(e) => e.currentTarget.style.color = '#ff5733'} onMouseLeave={(e) => e.currentTarget.style.color = 'white'} onClick={onSongForward} />
       </div>
       <div style={{ width: '15%', display: 'flex', justifyContent: 'center' }}>
-        <FontAwesomeIcon icon={faUpRightFromSquare} style={{ ...iconStyle, fontSize: '20px', margin: '5px' }} onMouseEnter={(e) => e.currentTarget.style.color = '#ff5733'} onMouseLeave={(e) => e.currentTarget.style.color = 'white'} />
+        <FontAwesomeIcon icon={faUpRightFromSquare} style={{ ...iconStyle, fontSize: '20px', margin: '5px' }} onMouseEnter={(e) => e.currentTarget.style.color = '#ff5733'} onMouseLeave={(e) => e.currentTarget.style.color = 'white'} onClick={onPlayButtonClick} />
       </div>
     </div>
   );
