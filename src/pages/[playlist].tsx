@@ -43,7 +43,36 @@ const PlaylistPage: NextPage<PlaylistPageProps> = ({ playlist }) => {
       flexDirection: 'row' as 'row',
       alignItems: 'center',
     },
-  };
+    songHeader: {
+      display: 'flex',
+      flexDirection: 'row' as 'row',
+      alignItems: 'center' as 'center',
+      padding: '10px 20px',
+      backgroundColor: '#333',
+      color: 'white',
+  },
+  songHeaderText: {
+      flex: 1,
+  },
+  songHeaderNumber: {
+      width: '5%',
+  },
+  songHeaderTitle: {
+      width: '30%',
+  },
+  songHeaderDescription: {
+      flex: 1,
+  },
+  songHeaderPlays: {
+      width: '15%',
+      textAlign: 'right' as 'right',
+  },
+  songHeaderDuration: {
+      width: '5%',
+      textAlign: 'right' as 'right',
+      marginRight: '5px',
+  },
+};
 
   return (
     <AppLayout>
@@ -51,12 +80,21 @@ const PlaylistPage: NextPage<PlaylistPageProps> = ({ playlist }) => {
         <div style={styles.headerContainer}>
           <div style={styles.headerInfoContainer}>
             <FontAwesomeIcon icon={faMusic} style={{ fontSize: '8vw' }} />
-            <div>
-              <h1 style={{ fontSize: '8vw' }}>{playlist.title}</h1>
-              <p>2 Likes * {playlist.songs.length} songs * 132hr 26 min</p>
+            <div style={styles.headerTextContainer}>
+              <h1 style={styles.headerText}>{playlist.title}</h1>
+              <p style={styles.subText}>2 Likes * {playlist.songs.length} songs * 132hr 26 min</p>
             </div>
           </div>
         </div>
+        <p>{playlist.description}</p>
+        <div style={styles.songHeader}>
+          <h4 style={{ ...styles.songHeaderNumber, margin: 0 }}>#</h4>
+          <h4 style={{ ...styles.songHeaderTitle, margin: 0 }}>Title / Description</h4>
+          <h4 style={{ ...styles.songHeaderDescription, margin: 0 }}></h4>
+          <h4 style={{ ...styles.songHeaderPlays, margin: 0 }}>Plays</h4>
+          <h4 style={{ ...styles.songHeaderDuration, margin: 0 }}>Duration</h4>
+        </div>
+
         <div>
           {playlist.songs.map((song) => (
             <Song key={song.indexx} song={song} />

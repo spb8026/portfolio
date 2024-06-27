@@ -5,14 +5,15 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 
-const playlists = [
-  { imgSrc: 'next.svg', title: 'Classes Taken' },
-  { imgSrc: 'next.svg', title: 'Design Projects' },
-  { imgSrc: 'next.svg', title: 'Experiance' },
-  { imgSrc: 'next.svg', title: 'Side-Projects' }
-];
+import { getFontAwesomeIcon } from '../utils/iconUtils';
+import { Data, Playlist, Song } from '../models';
+import data from '../data/data.json'; // Import your data
+
+const playlists = data.playlists;
 
 const MainContent = () => {
+
+  const playlist = playlists;
 
   const styles = {
     container: {
@@ -139,8 +140,9 @@ const MainContent = () => {
       <div style={styles.playlists}>
         {playlists.map((playlist, index) => (
           <div key={index} style={styles.playlistItem}>
-            <img src={playlist.imgSrc} alt={`Playlist ${index + 1}`} style={styles.playlistImg} />
+            <FontAwesomeIcon icon={getFontAwesomeIcon(playlist.icon)} style={styles.playlistImg}></FontAwesomeIcon>
             <h3 style={{fontSize: '2rem'}}>{playlist.title}</h3>
+            <Link href="/{{playlist.id}}" style={{width: '100%', height: '100%'}}></Link>
           </div>
         ))}
       </div>

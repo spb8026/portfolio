@@ -1,7 +1,9 @@
 import { useState } from 'react';
 import data from '../data/data.json';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMusic, faProjectDiagram, faPerson, faSearch } from '@fortawesome/free-solid-svg-icons';
+import { faMusic, faProjectDiagram, faPerson, faSearch, faHome } from '@fortawesome/free-solid-svg-icons';
+import Link from 'next/link';
+import { getFontAwesomeIcon } from '@/utils/iconUtils';
 
 const Sidebar = () => {
   const [playlists, setPlaylists] = useState(data.playlists);
@@ -74,7 +76,7 @@ const Sidebar = () => {
           onMouseEnter={() => setHoveredBox('faPerson')}
           onMouseLeave={() => setHoveredBox(null)}
         >
-          <FontAwesomeIcon icon={faPerson} style={styles.icon} />
+          <Link href={'/'} style={{all: 'unset', display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', height: '100%'}} ><FontAwesomeIcon icon={faHome} style={styles.icon} /></Link>
         </div>
         <div
           style={{
@@ -106,17 +108,5 @@ const Sidebar = () => {
   );
 };
 
-// Helper function to map icon string to FontAwesome icon component
-const getFontAwesomeIcon = (iconName: string) => {
-  switch (iconName) {
-    case 'faMusic':
-      return faMusic;
-    case 'faProjectDiagram':
-      return faProjectDiagram;
-    // Add more cases for other icons as needed
-    default:
-      return faMusic; // Default to faMusic if icon name is not recognized
-  }
-};
 
 export default Sidebar;
