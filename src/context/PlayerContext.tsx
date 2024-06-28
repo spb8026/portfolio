@@ -7,6 +7,7 @@ type PlayerContextType = {
     currentPlaylist: Playlist;
     showInfobar: boolean;
     handlePlayButtonClick: () => void;
+    handlePlaylistChange: (playlist: Playlist) => void;
     handleSongChange: (song: Song) => void;
     handleSongForward: () => void;
     handleSongBackward: () => void;
@@ -25,6 +26,11 @@ export const PlayerProvider = ({ children }: { children: ReactNode }) => {
 
     const handleSongChange = (curSong: Song) => {
         setCurrentSong(curSong);
+    };
+
+    const handlePlaylistChange = (curPlaylist: Playlist) => {
+        setCurrentPlaylist(curPlaylist);
+        setCurrentSong(curPlaylist.songs[0]);
     };
 
     const handleSongForward = () => {
@@ -56,6 +62,7 @@ export const PlayerProvider = ({ children }: { children: ReactNode }) => {
                 currentPlaylist,
                 showInfobar,
                 handlePlayButtonClick,
+                handlePlaylistChange,
                 handleSongChange,
                 handleSongForward,
                 handleSongBackward,

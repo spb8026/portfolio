@@ -1,6 +1,5 @@
-import { height } from "@fortawesome/free-solid-svg-icons/fa0";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { faCirclePlay, faEnvelope, faPlay } from "@fortawesome/free-solid-svg-icons";
 import Image from 'next/image';
 import Link from 'next/link';
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
@@ -8,12 +7,15 @@ import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { getFontAwesomeIcon } from '../utils/iconUtils';
 import { Data, Playlist, Song } from '../models';
 import data from '../data/data.json'; // Import your data
+import { useState } from "react";
+import { usePlayer } from '@/context/PlayerContext';
+
 
 const playlists = data.playlists;
 
 const MainContent = () => {
-
-  const playlist = playlists;
+  const [hoveredBox, setHoveredBox] = useState<String | null>(null);
+  const {handlePlaylistChange} = usePlayer();
 
   const styles = {
     container: {
@@ -81,15 +83,20 @@ const MainContent = () => {
       height: '40vh'
     },
     playlistItem: {
-      width: '31%',
-      height: '40%',
+      width: '30%',
+      height: '35%',
       margin: '1%',
+      padding: '10px',
       display: 'flex',
       alignItems: 'center',
       backgroundColor: '#789581',
       borderRadius: '10px',
       overflow: 'hidden',
-      cursor: 'pointer'
+      cursor: 'pointer',
+      position: 'relative' as 'relative', // Ensures the Link covers the entire div
+    },
+    playlistItemHovered: {
+      backgroundColor: '#C0C5C1',
     },
     playlistImg: {
       width: '25%',
@@ -97,25 +104,43 @@ const MainContent = () => {
       marginLeft: '10px',
       marginRight: '30px'
     },
-     iconStyle: {
+    playlistLink: {
+      position: 'absolute' as 'absolute',
+      top: 0,
+      left: 0,
+      width: '100%',
+      height: '100%',
+      zIndex: 1, // Ensures the Link is clickable over other elements
+    },
+    iconStyle: {
       color: 'white',
       fontSize: '30px',
       cursor: 'pointer',
       transition: 'color 0.3s', // Smooth transition for the color change
     },
-     iconHoverStyle: {
-      color: '#ff5733', // Color when hovered over
-    }
+    playIcon: {
+      position: 'absolute' as 'absolute',
+      right: '30px',
+      display: 'none',
+      fontSize: '50px',
+      color: '#C22222',
+      zIndex: 2,
+    },
+    playIconVisible: {
+      display: 'block',
+    },
   };
-  
+
+  function handlePlayButtonClick(playlist: Playlist) {
+    handlePlaylistChange(playlist);
+  }
 
   return (
     <div style={styles.container}>
-
       <div style={styles.header}>
         <a href="mailto:shawnbroderick658@gmail.com"><FontAwesomeIcon icon={faEnvelope} style={styles.iconStyle} onMouseEnter={(e) => e.currentTarget.style.color = '#ff5733'} onMouseLeave={(e) => e.currentTarget.style.color = 'white'} /> </a>
-        <a href="https://github.com/spb8026" target="_blank" ><FontAwesomeIcon icon={faGithub} style={styles.iconStyle} onMouseEnter={(e) => e.currentTarget.style.color = '#ff5733'} onMouseLeave={(e) => e.currentTarget.style.color = 'white'}/> </a>
-        <a href="https://www.linkedin.com/in/shawn-broderick-24b736266/" target="_blank"><FontAwesomeIcon icon={faLinkedin} style={styles.iconStyle} onMouseEnter={(e) => e.currentTarget.style.color = '#ff5733'} onMouseLeave={(e) => e.currentTarget.style.color = 'white'}/></a>
+        <a href="https://github.com/spb8026" target="_blank" ><FontAwesomeIcon icon={faGithub} style={styles.iconStyle} onMouseEnter={(e) => e.currentTarget.style.color = '#ff5733'} onMouseLeave={(e) => e.currentTarget.style.color = 'white'} /> </a>
+        <a href="https://www.linkedin.com/in/shawn-broderick-24b736266/" target="_blank"><FontAwesomeIcon icon={faLinkedin} style={styles.iconStyle} onMouseEnter={(e) => e.currentTarget.style.color = '#ff5733'} onMouseLeave={(e) => e.currentTarget.style.color = 'white'} /></a>
       </div>
 
       <div style={styles.banner}>
@@ -129,25 +154,39 @@ const MainContent = () => {
           />
         </div>
         <div style={styles.playlistInfo}>
-          <h1 style={styles.title}>Shawn Brodeick - Software Engineer / Computer Science Student</h1>
+          <h1 style={styles.title}>Shawn Broderick - Software Engineer / Computer Science Student</h1>
           <p style={styles.description}>Welcome to my Spotify inspired portfolio!</p>
-          <Link href="/aboutme"style={styles.playButton}>About Me</Link>
+          <Link href="/aboutme" style={styles.playButton}>About Me</Link>
           <button style={styles.followButton}>About this Project</button>
         </div>
       </div>
 
       <div style={styles.playlists}>
         {playlists.map((playlist, index) => (
-          <div key={index} style={styles.playlistItem}>
+          <div key={index}
+          style={{
+            ...styles.playlistItem,
+            ...(hoveredBox === playlist.id && styles.playlistItemHovered),
+          }}
+          onMouseEnter={() => setHoveredBox(playlist.id)}
+          onMouseLeave={() => setHoveredBox(null)}
+        >
             <FontAwesomeIcon icon={getFontAwesomeIcon(playlist.icon)} style={styles.playlistImg}></FontAwesomeIcon>
-            <h3 style={{fontSize: '2rem'}}>{playlist.title}</h3>
-            <Link href="/{{playlist.id}}" style={{width: '100%', height: '100%'}}></Link>
+            <h3 style={{ fontSize: '2rem' }}>{playlist.title}</h3>
+            <Link href={`/${playlist.id}`} style={styles.playlistLink}></Link>
+            <FontAwesomeIcon
+              icon={faCirclePlay}
+              style={{
+                ...styles.playIcon,
+                ...(hoveredBox === playlist.id && styles.playIconVisible),
+              }}
+              onClick={() => handlePlayButtonClick(playlist)}
+              />            
           </div>
         ))}
       </div>
     </div>
   );
 };
-
 
 export default MainContent;
