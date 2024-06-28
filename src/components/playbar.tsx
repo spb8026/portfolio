@@ -20,14 +20,32 @@ const Playbar = ({ curSong, curPlaylist, onSongForward, onSongBackward, onPlayBu
     justifyContent: 'space-between',
     alignItems: 'center',
     backgroundColor: '#0C0C0C',
-    position: 'fixed',
+    position: 'fixed' as 'fixed',
     bottom: 0,
+    padding: '0 10px', // Optional: add some padding to the sides
   };
 
   const songInfoStyle = {
     display: 'flex',
     alignItems: 'center',
-    width: '15%',
+    flex: 1,
+    overflow: 'hidden', // Ensure the song info section doesn't overflow
+  };
+
+  const imageWrapperStyle = {
+    width: '40px',
+    height: '40px',
+    position: 'relative' as 'relative',
+    marginRight: '20px',
+    marginLeft: '5px',
+    flexShrink: 0,
+  };
+
+  const descriptionWrapperStyle = {
+    display: 'flex',
+    flexDirection: 'column' as 'column',
+    overflow: 'hidden', // Ensure the description doesn't overflow
+    whiteSpace: 'nowrap',
   };
 
   const descriptionStyle = {
@@ -35,7 +53,15 @@ const Playbar = ({ curSong, curPlaylist, onSongForward, onSongBackward, onPlayBu
     whiteSpace: 'nowrap',
     overflow: 'hidden',
     textOverflow: 'ellipsis',
-    width: '50%',
+    width: '100%',
+  };
+
+  const iconContainerStyle = {
+    width: '70%',
+    display: 'flex',
+    justifyContent: 'center' as 'center',
+    alignItems: 'center' as 'center',
+    flexShrink: 0,
   };
 
   const iconStyle = {
@@ -49,24 +75,61 @@ const Playbar = ({ curSong, curPlaylist, onSongForward, onSongBackward, onPlayBu
     color: '#ff5733', // Color when hovered over
   };
 
+  const smallIconContainerStyle = {
+    width: '10%',
+    display: 'flex',
+    justifyContent: 'center' as 'center',
+    flexShrink: 0,
+  };
+
+  const smallIconStyle = {
+    color: 'white',
+    fontSize: '20px',
+    cursor: 'pointer',
+    transition: 'color 0.3s', // Smooth transition for the color change
+  };
+
   return (
     <div style={playbarStyle}>
       <div style={songInfoStyle}>
-        <div style={{ width: '40px', height: '40px', position: 'relative', marginRight: '20px', marginLeft: '5px' }}>
-          <Image src={curSong.image} alt="Music-Image" width={50} height={50} style={{ display: 'inline' }} />
+        <div style={imageWrapperStyle}>
+          <Image src={curSong.image} alt="Music-Image" layout="fill" style={{ display: 'inline' }} />
         </div>
-        <div style={{ display: 'flex', flexDirection: 'column' }}>
+        <div style={descriptionWrapperStyle}>
           <p style={{ margin: '0px' }}>{curSong.title}</p>
           <p style={descriptionStyle}>{curSong.description}</p>
         </div>
       </div>
-      <div style={{ width: '70%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-        <FontAwesomeIcon icon={faBackwardStep} style={iconStyle} onMouseEnter={(e) => e.currentTarget.style.color = '#ff5733'} onMouseLeave={(e) => e.currentTarget.style.color = 'white'} onClick={onSongBackward} />
-        <FontAwesomeIcon icon={faPause} style={{ ...iconStyle, margin: '25px' }} onMouseEnter={(e) => e.currentTarget.style.color = '#ff5733'} onMouseLeave={(e) => e.currentTarget.style.color = 'white'} />
-        <FontAwesomeIcon icon={faForwardStep} style={iconStyle} onMouseEnter={(e) => e.currentTarget.style.color = '#ff5733'} onMouseLeave={(e) => e.currentTarget.style.color = 'white'} onClick={onSongForward} />
+      <div style={iconContainerStyle}>
+        <FontAwesomeIcon
+          icon={faBackwardStep}
+          style={iconStyle}
+          onMouseEnter={(e) => e.currentTarget.style.color = iconHoverStyle.color}
+          onMouseLeave={(e) => e.currentTarget.style.color = iconStyle.color}
+          onClick={onSongBackward}
+        />
+        <FontAwesomeIcon
+          icon={faPause}
+          style={{ ...iconStyle, margin: '25px' }}
+          onMouseEnter={(e) => e.currentTarget.style.color = iconHoverStyle.color}
+          onMouseLeave={(e) => e.currentTarget.style.color = iconStyle.color}
+        />
+        <FontAwesomeIcon
+          icon={faForwardStep}
+          style={iconStyle}
+          onMouseEnter={(e) => e.currentTarget.style.color = iconHoverStyle.color}
+          onMouseLeave={(e) => e.currentTarget.style.color = iconStyle.color}
+          onClick={onSongForward}
+        />
       </div>
-      <div style={{ width: '15%', display: 'flex', justifyContent: 'center' }}>
-        <FontAwesomeIcon icon={faUpRightFromSquare} style={{ ...iconStyle, fontSize: '20px', margin: '5px' }} onMouseEnter={(e) => e.currentTarget.style.color = '#ff5733'} onMouseLeave={(e) => e.currentTarget.style.color = 'white'} onClick={onPlayButtonClick} />
+      <div style={smallIconContainerStyle}>
+        <FontAwesomeIcon
+          icon={faUpRightFromSquare}
+          style={smallIconStyle}
+          onMouseEnter={(e) => e.currentTarget.style.color = iconHoverStyle.color}
+          onMouseLeave={(e) => e.currentTarget.style.color = iconStyle.color}
+          onClick={onPlayButtonClick}
+        />
       </div>
     </div>
   );

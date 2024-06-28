@@ -8,6 +8,7 @@ import Song from '@/components/Song';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMusic } from '@fortawesome/free-solid-svg-icons';
 import { AppLayout } from '@/components/Layout';
+import { getFontAwesomeIcon } from '@/utils/iconUtils';
 
 interface PlaylistPageProps {
   playlist: Playlist | null;
@@ -26,8 +27,11 @@ const PlaylistPage: NextPage<PlaylistPageProps> = ({ playlist }) => {
   const styles = {
     container: {
       width: '100%',
-      height: '100%',
+      height: '100vh', // Ensure the container takes the full height of the viewport
       backgroundColor: '#0C0C0C',
+      display: 'flex',
+      flexDirection: 'column' as 'column',
+      overflow: 'hidden', // Prevent scrolling on the entire container
     },
     headerContainer: {
       width: '100%',
@@ -50,36 +54,48 @@ const PlaylistPage: NextPage<PlaylistPageProps> = ({ playlist }) => {
       padding: '10px 20px',
       backgroundColor: '#333',
       color: 'white',
-  },
-  songHeaderText: {
+    },
+    songHeaderText: {
       flex: 1,
-  },
-  songHeaderNumber: {
+    },
+    songHeaderNumber: {
       width: '5%',
-  },
-  songHeaderTitle: {
+    },
+    songHeaderTitle: {
       width: '30%',
-  },
-  songHeaderDescription: {
+    },
+    songHeaderDescription: {
       flex: 1,
-  },
-  songHeaderPlays: {
+    },
+    songHeaderPlays: {
       width: '15%',
       textAlign: 'right' as 'right',
-  },
-  songHeaderDuration: {
+    },
+    songHeaderDuration: {
       width: '5%',
       textAlign: 'right' as 'right',
       marginRight: '5px',
-  },
-};
+    },
+    songsContainer: {
+      flex: 1, // Allow the songs container to grow and take up available space
+      overflowY: 'scroll', // Enable vertical scrolling only for the songs section
+      paddingRight: '10px', // Optional: add some padding to the right to avoid content getting hidden by the scrollbar
+      msOverflowStyle: 'none' as 'none',  // Hide scrollbar in IE and Edge
+      scrollbarWidth: 'none' as 'none',  // Hide scrollbar in Firefox
+    },
+    hideScrollbar: {
+      '&::-webkit-scrollbar': {
+        display: 'none',
+      },
+    },
+  };
 
   return (
     <AppLayout>
       <div style={styles.container}>
         <div style={styles.headerContainer}>
           <div style={styles.headerInfoContainer}>
-            <FontAwesomeIcon icon={faMusic} style={{ fontSize: '8vw' }} />
+            <FontAwesomeIcon icon={getFontAwesomeIcon(playlist.icon)} style={{ fontSize: '8vw', marginRight: '10px' }} />
             <div style={styles.headerTextContainer}>
               <h1 style={styles.headerText}>{playlist.title}</h1>
               <p style={styles.subText}>2 Likes * {playlist.songs.length} songs * 132hr 26 min</p>
@@ -95,7 +111,7 @@ const PlaylistPage: NextPage<PlaylistPageProps> = ({ playlist }) => {
           <h4 style={{ ...styles.songHeaderDuration, margin: 0 }}>Duration</h4>
         </div>
 
-        <div>
+        <div style={{ ...styles.songsContainer, ...styles.hideScrollbar }}>
           {playlist.songs.map((song) => (
             <Song key={song.indexx} song={song} />
           ))}
@@ -110,7 +126,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const jsonData = JSON.parse(fs.readFileSync(filePath, 'utf-8')) as Data;
   const playlists = jsonData.playlists;
 
-  const paths = playlists.map((playlist : Playlist) => ({
+  const paths = playlists.map((playlist: Playlist) => ({
     params: { playlist: playlist.id },
   }));
 
