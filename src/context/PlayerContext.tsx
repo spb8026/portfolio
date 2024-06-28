@@ -16,7 +16,7 @@ const PlayerContext = createContext<PlayerContextType | undefined>(undefined);
 
 export const PlayerProvider = ({ children }: { children: ReactNode }) => {
     const [showInfobar, setShowInfobar] = useState(false);
-    const [currentPlaylist, setCurrentPlaylist] = useState(data.playlists[0]);
+    const [currentPlaylist, setCurrentPlaylist] = useState(data.playlists[2]);
     const [currentSong, setCurrentSong] = useState(currentPlaylist.songs[0]);
 
     const handlePlayButtonClick = () => {

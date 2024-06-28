@@ -1,27 +1,22 @@
 import { faCircleXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from 'next/image';
+import { CSSProperties } from 'react';
+import { Playlist, Song } from '../models'; // Adjust the import path according to your project structure
 
-
-interface infoBarProps {
+interface InfoBarProps {
     curSong: Song;
     curPlaylist: Playlist;
-  }
+}
 
-export default function Infobar({curSong,curPlaylist}: infoBarProps) {
-
-
+export default function Infobar({ curSong, curPlaylist }: InfoBarProps) {
     const techStack = curSong.techStack;
     const credits = curSong.credits;
 
-    
-
-
-    const styles = {
+    const styles: { [key: string]: CSSProperties } = {
         containertemp: {
             width: "20vw",
             height: "100vh",
-            scrollbars: "hidden",
             backgroundColor: '#0C0C0C',
         },
         container: {
@@ -30,7 +25,6 @@ export default function Infobar({curSong,curPlaylist}: infoBarProps) {
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
-
         },
         topbarContainer: {
             width: "100%",
@@ -57,22 +51,26 @@ export default function Infobar({curSong,curPlaylist}: infoBarProps) {
         },
         bottombarContainer: {
             width: "100%",
-            height: "8%",
+            minHeight: "30%", // Ensure minimum height
+            height: "auto", // Allow height to grow with content
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
         },
         techStackContainer: {
             display: "flex",
             flexDirection: "row",
             alignItems: "center",
             justifyContent: "space-evenly",
-            scrollbars: "none",
+            overflowX: "auto",
         },
-        aboutContainer : {
+        aboutContainer: {
             width: "90%",
-            height: "30%",
             backgroundColor: "#342A21",
             borderRadius: "10px",
-            padding:   "2%",
-        }
+            padding: "2%",
+            marginTop: "10px",
+        },
     };
 
     return (
