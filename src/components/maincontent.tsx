@@ -17,7 +17,6 @@ const MainContent = () => {
 
   const styles = {
     container: {
-      maxWidth: '100%',
       height: '100vh',
       margin: '0 auto',
       padding: '20px',

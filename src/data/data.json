@@ -1,94 +1,259 @@
 {
   "playlists": [
     {
+      "id": "ITW",
+      "title": "In The Works",
+      "description": "A highlight of my current achievements.",
+      "icon": "faCalendarDay",
+      "songs": [
+        {
+                    "indexx": 0,
+          "title": "Java",
+          "description": "",
+          "links": [],
+          "credits": [],
+          "techStack": [],
+          "image": ""
+        }
+      ]
+    },
+    {
       "id": "skills",
       "title": "Skills",
-      "description": "List of skills I have used",
-      "icon": "faMusic",
+      "description": "A collection of the major skills/technologies within my toolbelt.",
+      "icon": "faLightbulb",
       "songs": [
         {
           "indexx": 0,
-          "title": "Angular",
-          "description": "Built the cart portion of an e-store for my SWEN-261 project",
-          "links": ["**SWENSTORE"],
+          "title": "Java",
+          "description": "",
+          "links": [],
+          "credits": [],
+          "techStack": [],
+          "image": ""
+        }
+      ]
+    },
+    {
+      "id": "work",
+      "title": "Work Experience",
+      "description": "Collection of all my work experience throughout my life.",
+      "icon": "faBriefcase",
+      "songs": [
+        {
+          "indexx": 0,
+          "title": "First Citizens Banks Internship",
+          "description": "May 27th - Current\nWorking with the Enterprise Incident Management Team, I used my skills in application development to create an intuitive application for creating distribution lists, emails, as well as presentations to improve efficiency during an incident, remove tedious tasks, and room for error.",
+          "links": [],
           "credits": [],
           "techStack": [
             {
-              "name": "TypeScript",
-              "image": "typescript.svg"
+              "name": "Java",
+              "image": "/java.webp"
             },
             {
-              "name": "HTML",
-              "image": "html.svg"
-            },
-            {
-              "name": "CSS",
-              "image": "css.svg"
+              "name": "Next JS",
+              "image": "/next.svg"
             }
           ],
-          "image": "/rit.png"
+          "image": ""
         },
         {
           "indexx": 1,
-          "title": "Node.js",
-          "description": "Built part of a backend API for my SWEN-261 project",
-          "links": ["**SWENSTORE"],
+          "title": "Student Note Taker",
+          "description": "Working to take accurate and effective notes for NTID students at RIT. I have taken notes for Calc 2, Multivariable Calculus, and Introduction to Software Engineering. (Henrietta, NY - 11/22-5/23, 1/24 - Present)",
+          "links": [],
+          "credits": [],
+          "techStack": []
+        },
+        {
+          "indexx": 2,
+          "title": "Domino’s Delivery Driver",
+          "description": "Efficiently delivered and prepared Domino's products for safe and timely customer delivery. (Hamburg, NJ - 7/23-8/23)",
+          "links": [],
+          "credits": [],
+          "techStack": []
+        },
+        {
+          "indexx": 3,
+          "title": "Web-Design / Social Media Management",
+          "description": "Established and managed Instagram and Facebook profiles, resulting in a remarkable 340% growth in followers compared to prior endeavors for Instagram in 2 months. Designed and created a Webflow based site as a basis for information about Bryce Grier's professional trumpet career. (Remote - 7/22-Present)",
+          "links": [
+            "https://www.instagram.com/talltimbersofficial/",
+            ""
+          ],
+          "credits": [
+          ],
+          "techStack": []
+        },
+        {
+          "indexx": 4,
+          "title": "Dunkin Crew Member",
+          "description": "Accurately created Dunkin' beverages in a fast-paced environment while efficiently satisfying customer needs through proactive interactions. (Vernon, NJ - 7/23-8/23)",
+          "links": [],
+          "credits": [],
+          "techStack": []
+        },
+        {
+          "indexx": 5,
+          "title": "Tall Timbers Maintenance Crew",
+          "description": "Performed landscaping, painting, and janitorial duties to maintain clean and presentable grounds, consistently working independently to enhance the aesthetics and functionality of the campground. (Vernon, NJ - 4/21-8/22)",
+          "links": [],
+          "credits": [],
+          "techStack": []
+        },
+        {
+          "indexx": 6,
+          "title": "Mountain Creek Ski Resrort Cashier",
+          "description": "Handled transactions while upselling Season Passes to customers. (Vernon, NJ - 12/19-3/20)",
+          "links": [],
+          "credits": [],
+          "techStack": []
+        }
+      ]
+    },
+    {
+      "id": "academic",
+      "title": "Academic",
+      "description": "A collection of notable classes I’ve taken and the work done within them.",
+      "icon": "faGraduationCap",
+      "songs": [
+        {
+          "indexx": 0,
+          "title": "Computer Science I",
+          "description": "Introductory computer science course where I learned basic programming concepts while working with Python.",
+          "links": [],
           "credits": [],
           "techStack": [
             {
-              "name": "JavaScript",
-              "image": "javascript.svg"
-            },
-            {
-              "name": "Express.js",
-              "image": "express.svg"
+              "name": "Python",
+              "image": ""
             }
           ],
-          "image": "nodejs.svg"
+          "image": ""
+        },
+        {
+          "indexx": 1,
+          "title": "Computer Science II",
+          "description": "Introductory computer science course where I furthered basic programming concepts within Object-Oriented Programming using Java. Notable projects:\nArboles - Programmed a simple outline for a Virtual Machine capable of processing and executing low-level MAQ instructions using an instruction stack and symbol table,\nPuzzle Solver / Hoppers Game - Programmed a puzzle solver using a Depth First Search for solving simple problem-solving games and encoded the game 'Hoppers' to be playable in both the command line and a GUI version. This game featured a 'Hint' option that utilized the Depth First Search solver to find the most optimal game path to reach a win and display the next possible option for it.",
+          "links": [],
+          "credits": [],
+          "techStack": [
+            {
+              "name": "Java",
+              "image": ""
+            }
+          ],
+          "image": ""
+        },
+        {
+          "indexx": 2,
+          "title": "Mechanics of Programming",
+          "description": "Introduction to low-level programming and memory management using C. Notable Projects:\nHashADT: Developed a Hash Table implementation, showcasing expertise in data abstraction.\nBracetopia: Programmed grid city simulation where two groups are placed randomly, the simulation calculates 'happiness' based on neighbor proximity and proceeds to move the members of the simulation. Features dynamic adjustments via command line and can run for preset cycles or indefinitely using 'curses'.\nAmici: Constructed a 'social network' program that manages user interactions such as adding, removing, and friending. Capable of processing input from files or command line and displaying network statistics.\nAsteroids: Coded a simplified version of 'Asteroids' using 'curses' and multi-thread programming.",
+          "links": [],
+          "credits": [],
+          "techStack": [
+            {
+              "name": "C",
+              "image": ""
+            }
+          ],
+          "image": ""
+        },
+        {
+          "indexx": 3,
+          "title": "Computational Problem Solving I",
+          "description": "An introduction to solving simple tasks using programming in C++.",
+          "links": [],
+          "credits": [],
+          "techStack": [
+            {
+              "name": "C++",
+              "image": ""
+            }
+          ],
+          "image": ""
+        },
+        {
+          "indexx": 4,
+          "title": "Introduction to Computer Science Theory",
+          "description": "Introduction to the theoretical practices behind computation.",
+          "links": [],
+          "credits": [],
+          "techStack": [],
+          "image": ""
+        },
+        {
+          "indexx": 5,
+          "title": "Analysis of Algorithms",
+          "description": "Introduction to analyzing and using different data structures and algorithms to solve problems. Got experience with using dynamic programming, graph theory, flow theory, time-complexity, as well as P vs NP problems.",
+          "links": [],
+          "credits": [],
+          "techStack": [
+            {
+              "name": "Java",
+              "image": ""
+            }
+          ],
+          "image": ""
+        },
+        {
+          "indexx": 6,
+          "title": "Principles of Data Management",
+          "description": "Introduction to how to design databases with a focus in SQL. Project: Simple command line application for managing a Music database with users.",
+          "links": [],
+          "credits": [],
+          "techStack": [
+            {
+              "name": "PostgreSQL",
+              "image": ""
+            },
+            {
+              "name": "Java",
+              "image": ""
+            }
+          ],
+          "image": ""
+        },
+        {
+          "indexx": 7,
+          "title": "Intro to Software Engineering",
+          "description": "Semester-long mock-up of a Scrum-Agile process with building an E-Store. For my portion of the project, I focused on building the Cart on the front end while having some interaction with building parts of the Springboot API as well as learning documentation and JavaUnit Testing.",
+          "links": ["https://github.com/RIT-SWEN-261-006/team-project-2235-swen-261-06-2b-wizards"],
+          "credits": ["Jack Barter", "Joseph Skinner", "Garret Tupper", "Evan Svage"],
+          "techStack": [
+            {
+              "name": "Angular",
+              "image": ""
+            },
+            {
+              "name": "Springboot",
+              "image": ""
+            }
+          ],
+          "image": ""
         }
       ]
     },
     {
       "id": "projects",
-      "title": "Projects",
-      "description": "Highlight projects I have worked on",
-      "icon": "faProjectDiagram",
+      "title": "Side Projects",
+      "description": "Side design and devlopment projects.",
+      "icon": "",
       "songs": [
         {
           "indexx": 0,
-          "title": "Project 1",
-          "description": "Description of Project 1",
-          "links": ["**SWENSTORE"],
+          "title": "",
+          "description": "",
+          "links": [],
           "credits": [],
           "techStack": [
             {
-              "name": "React",
-              "image": "react.svg"
-            },
-            {
-              "name": "Redux",
-              "image": "redux.svg"
+              "name": "",
+              "image": ""
             }
           ],
-          "image": "project1.svg"
-        },
-        {
-          "indexx": 1,
-          "title": "Project 2",
-          "description": "Description of Project 2",
-          "links": ["**SWENSTORE"],
-          "credits": [],
-          "techStack": [
-            {
-              "name": "Java",
-              "image": "java.svg"
-            },
-            {
-              "name": "Spring Boot",
-              "image": "springboot.svg"
-            }
-          ],
-          "image": "project2.svg"
+          "image": ""
         }
       ]
     }

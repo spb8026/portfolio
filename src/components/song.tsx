@@ -6,6 +6,7 @@ import { Song } from '../models';
 import { usePlayer } from '@/context/PlayerContext';
 import data from '../data/data.json';
 
+
 type SongProps = {
     song: Song;
 };
@@ -53,8 +54,8 @@ export default function Song({ song }: SongProps) {
                 <p style={{ margin: 0, fontWeight: 'bold' }}>{currentSong.title}</p>
                 <p style={{ margin: 0 }}>{currentSong.description}</p>
             </div>
-            <p style={{ width: '15%', textAlign: 'right', margin: 0 }}>68,123,124</p>
-            <p style={{ width: '5%', textAlign: 'right', margin: 0, marginRight: '5px' }}>1:20</p>
+            <p style={{ width: '20%', textAlign: 'right', margin: 0 }}>68,123,124</p>
+            <p style={{ width: '20%', textAlign: 'right', margin: 0, marginRight: '5px' }}>1:20</p>
         </div>
     );
 }
