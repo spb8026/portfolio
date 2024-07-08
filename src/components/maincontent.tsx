@@ -15,6 +15,7 @@ const playlists = data.playlists;
 
 const MainContent = () => {
   const [hoveredBox, setHoveredBox] = useState<String | null>(null);
+  const [aboutHover, setAboutHover] = useState(false);
   const {handlePlaylistChange} = usePlayer();
 
   const styles = {
@@ -91,7 +92,7 @@ const MainContent = () => {
       height: '40vh',
     },
     playlistItem: {
-      width: '30%',
+      width: '29%',
       height: '35%',
       margin: '1%',
       padding: '10px',
@@ -137,6 +138,20 @@ const MainContent = () => {
     playIconVisible: {
       display: 'block',
     },
+    aboutBox: {
+      position: 'absolute',
+      top: '40%',
+      left: '45%',
+      width: '50%',
+      backgroundColor: '#0C0C0C',
+      border: '4px solid #C22222',
+      borderRadius: '20px',
+      dropShadow: '10px 10px 10px white',
+      display: 'none',
+    },
+    aboutBoxVisible: {
+      display: 'block',
+    }
   };
 
   function handlePlayButtonClick(playlist: Playlist) {
@@ -165,7 +180,11 @@ const MainContent = () => {
           <h1 style={styles.title}>Shawn Broderick - Software Engineer / Computer Science Student</h1>
           <p style={styles.description}>Welcome to my Spotify inspired portfolio!</p>
           <Link href="/aboutme" style={styles.playButton}>About Me</Link>
-          <button style={styles.followButton}>About this Project</button>
+          <button style={styles.followButton}
+            onMouseEnter={() => setAboutHover(true)}
+            onMouseLeave={() => setAboutHover(false)}
+          
+          >About this Project</button>
         </div>
       </div>
 
@@ -192,6 +211,16 @@ const MainContent = () => {
               />            
           </div>
         ))}
+      </div>
+      <div 
+          style={{
+            ...styles.aboutBox,
+           ...(aboutHover === true && styles.playIconVisible),
+        }}
+        >
+        <p>
+        After exploring numerous ideas for a unique portfolio, I realized that the perfect inspiration had been right in front of me all along. Music is an integral part of my life, accompanying me in almost every aspect of my day to day. Given my affinity for Spotify, I decided to draw UI/UX inspiration from it and create a portfolio that is a creative parody of the platform. To elevate the challenge, I chose to learn and implement both Next.js and React for this project. This decision not only allowed me to enhance my technical skills but also to deliver a seamless and engaging user experience reminiscent of my favorite music application.
+        </p>
       </div>
     </div>
   );

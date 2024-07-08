@@ -61,25 +61,19 @@ export default function AboutProject() {
                 <div style={styles.infoContainer}>
 
                 <div style={styles.infosubContainer}>
-                        <h2>In the Works</h2>
-                        {currentPlaylist.songs.map((song, index) => (
-                            <Song key={index} song={song} />
-                        ))}
+                        <h2>Technology</h2>
+                        
                     </div>
 
                     <div style={styles.infosubContainer}>
-                        <h2>About Me</h2>
+                        <h2>About The Project</h2>
                         <p>
-                        Driven by an unwavering passion for technology, I am enthusiastically pursuing a degree in Computer Science. My goal is to refine and enhance my skills in a practical setting as I transition from academia to the professional world. I am actively seeking internship opportunities for Summer 2024 and am flexible for positions in either Fall 2024 or Spring 2025. Alongside my academic endeavors, I am also available for freelance projects in Web Development and Web Design. This side passion of mine not only complements my formal education but also allows me to apply and expand my technical expertise in creating visually appealing and functionally robust websites. Whether it's through an internship or freelance work, I am eager to contribute my growing skill set in a dynamic, real-world environment
+                        
                         </p>
                     </div>
 
                     <div style={styles.infosubContainer}>
-                        <h2>Education</h2>
-                        <p>BS in Computer Science</p>
-                        <p>GPA: 3.62</p>
-                        <p>Graduation: May 2027</p>
-                        <Image src="/rit.png" width={50} height={50} />
+                        <h2>Definitions</h2>
 
                     </div>
                 </div>
