@@ -239,7 +239,7 @@
               "image": ""
             }
           ],
-          "image": ""
+          "image": "/CSI.png"
         },
         {
           "indexx": 1,
@@ -253,7 +253,7 @@
               "image": ""
             }
           ],
-          "image": ""
+          "image": "/CSII.png"
         },
         {
           "indexx": 2,
@@ -264,10 +264,10 @@
           "techStack": [
             {
               "name": "C",
-              "image": ""
+              "image": "/c.webp"
             }
           ],
-          "image": ""
+          "image": "/MOPS.png"
         },
         {
           "indexx": 3,
@@ -281,7 +281,7 @@
               "image": ""
             }
           ],
-          "image": ""
+          "image": "/CPP.png"
         },
         {
           "indexx": 4,
@@ -322,7 +322,7 @@
               "image": ""
             }
           ],
-          "image": ""
+          "image": "/postgre.webp"
         },
         {
           "indexx": 7,
@@ -340,7 +340,7 @@
               "image": ""
             }
           ],
-          "image": ""
+          "image": "/SWEN.png"
         }
       ]
     },
