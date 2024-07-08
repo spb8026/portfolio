@@ -1,17 +1,17 @@
 import Image from "next/image";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBackwardStep, faForwardStep, faPause, faUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
-import { Song, Playlist } from '../models'; // Adjust the import path as per your project structure
+import { usePlayer } from '../context/PlayerContext'; // Adjust the import path as per your project structure
 
-interface PlaybarProps {
-  curSong: Song;
-  curPlaylist: Playlist;
-  onSongForward: () => void;
-  onSongBackward: () => void;
-  onPlayButtonClick: (state: boolean) => void; // Add this prop for handling infobar toggle
-}
-
-const Playbar = ({ curSong, curPlaylist, onSongForward, onSongBackward, toggleInfoBar }: PlaybarProps) => {
+const Playbar = () => {
+  const {
+    currentSong,
+    currentPlaylist,
+    handleSongForward,
+    handleSongBackward,
+    handlePlayButtonClick,
+    toggleInfoBar,
+  } = usePlayer();
 
   const playbarStyle = {
     width: '100%',
@@ -93,11 +93,11 @@ const Playbar = ({ curSong, curPlaylist, onSongForward, onSongBackward, toggleIn
     <div style={playbarStyle}>
       <div style={songInfoStyle}>
         <div style={imageWrapperStyle}>
-          <Image src={curSong.image} alt="Music-Image" layout="fill" style={{ display: 'inline' }} />
+          <Image src={currentSong.image} alt="Music-Image" layout="fill" style={{ display: 'inline' }} />
         </div>
         <div style={descriptionWrapperStyle}>
-          <p style={{ margin: '0px' }}>{curSong.title}</p>
-          <p style={descriptionStyle}>{curSong.description}</p>
+          <p style={{ margin: '0px' }}>{currentSong.title}</p>
+          <p style={descriptionStyle}>{currentSong.description}</p>
         </div>
       </div>
       <div style={iconContainerStyle}>
@@ -106,20 +106,21 @@ const Playbar = ({ curSong, curPlaylist, onSongForward, onSongBackward, toggleIn
           style={iconStyle}
           onMouseEnter={(e) => e.currentTarget.style.color = iconHoverStyle.color}
           onMouseLeave={(e) => e.currentTarget.style.color = iconStyle.color}
-          onClick={onSongBackward}
+          onClick={handleSongBackward}
         />
         <FontAwesomeIcon
           icon={faPause}
           style={{ ...iconStyle, margin: '25px' }}
           onMouseEnter={(e) => e.currentTarget.style.color = iconHoverStyle.color}
           onMouseLeave={(e) => e.currentTarget.style.color = iconStyle.color}
+          onClick={() => handlePlayButtonClick(true)} // Assuming play button toggles the infobar
         />
         <FontAwesomeIcon
           icon={faForwardStep}
           style={iconStyle}
           onMouseEnter={(e) => e.currentTarget.style.color = iconHoverStyle.color}
           onMouseLeave={(e) => e.currentTarget.style.color = iconStyle.color}
-          onClick={onSongForward}
+          onClick={handleSongForward}
         />
       </div>
       <div style={smallIconContainerStyle}>
