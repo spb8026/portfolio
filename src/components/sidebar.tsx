@@ -4,10 +4,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMusic, faProjectDiagram, faPerson, faSearch, faHome } from '@fortawesome/free-solid-svg-icons';
 import Link from 'next/link';
 import { getFontAwesomeIcon } from '@/utils/iconUtils';
+import { usePlayer } from '../context/PlayerContext';
 
 const Sidebar = () => {
   const [playlists, setPlaylists] = useState(data.playlists);
   const [hoveredBox, setHoveredBox] = useState(null);
+  const { handlePlaylistChange } = usePlayer(); 
 
   const styles = {
     fullBar: {
@@ -76,7 +78,9 @@ const Sidebar = () => {
           onMouseEnter={() => setHoveredBox('faPerson')}
           onMouseLeave={() => setHoveredBox(null)}
         >
-          <Link href={'/'} style={{all: 'unset', display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', height: '100%'}} ><FontAwesomeIcon icon={faHome} style={styles.icon} /></Link>
+          <Link href={'/'} style={{ all: 'unset', display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', height: '100%' }}>
+            <FontAwesomeIcon icon={faHome} style={styles.icon} />
+          </Link>
         </div>
         <div
           style={{
@@ -99,6 +103,7 @@ const Sidebar = () => {
             }}
             onMouseEnter={() => setHoveredBox(playlist.id)}
             onMouseLeave={() => setHoveredBox(null)}
+            onClick={() => handlePlaylistChange(playlist)} 
           >
             <FontAwesomeIcon icon={getFontAwesomeIcon(playlist.icon)} style={styles.icon} />
           </div>
@@ -107,6 +112,5 @@ const Sidebar = () => {
     </div>
   );
 };
-
 
 export default Sidebar;
