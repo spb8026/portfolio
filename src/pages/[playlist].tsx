@@ -1,5 +1,6 @@
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 import { useRouter } from 'next/router';
+import { useEffect } from 'react';
 import fs from 'fs';
 import path from 'path';
 import { Playlist, Data } from '../models';
@@ -7,7 +8,7 @@ import { usePlayer } from '@/context/PlayerContext';
 import Song from '@/components/Song';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMusic } from '@fortawesome/free-solid-svg-icons';
-import { AppLayout } from '@/components/Layout';
+import Layout, { AppLayout } from '@/components/Layout';
 import { getFontAwesomeIcon } from '@/utils/iconUtils';
 
 interface PlaylistPageProps {
@@ -17,8 +18,7 @@ interface PlaylistPageProps {
 const PlaylistPage: NextPage<PlaylistPageProps> = ({ playlist }) => {
   const router = useRouter();
   const { playlist: playlistId } = router.query;
-
-  const { handlePlayButtonClick, handleSongChange, currentSong } = usePlayer();
+  const { handlePlaylistChange, currentPlaylist } = usePlayer();
 
   if (!playlist) {
     return <div>Loading...</div>;
@@ -27,11 +27,11 @@ const PlaylistPage: NextPage<PlaylistPageProps> = ({ playlist }) => {
   const styles = {
     container: {
       width: '100%',
-      height: '100vh', // Ensure the container takes the full height of the viewport
+      height: '100vh', 
       backgroundColor: '#0C0C0C',
       display: 'flex',
       flexDirection: 'column' as 'column',
-      overflow: 'hidden', // Prevent scrolling on the entire container
+      overflow: 'hidden', 
     },
     headerContainer: {
       width: '100%',
@@ -77,11 +77,12 @@ const PlaylistPage: NextPage<PlaylistPageProps> = ({ playlist }) => {
       marginRight: '5px',
     },
     songsContainer: {
-      flex: 1, // Allow the songs container to grow and take up available space
-      overflowY: 'scroll', // Enable vertical scrolling only for the songs section
-      paddingRight: '10px', // Optional: add some padding to the right to avoid content getting hidden by the scrollbar
-      msOverflowStyle: 'none' as 'none',  // Hide scrollbar in IE and Edge
-      scrollbarWidth: 'none' as 'none',  // Hide scrollbar in Firefox
+      flex: 1, 
+      overflowY: 'scroll', 
+      paddingRight: '10px',
+      msOverflowStyle: 'none' as 'none',  
+      scrollbarWidth: 'none' as 'none',  
+      paddingBottom: '10vh',
     },
     hideScrollbar: {
       '&::-webkit-scrollbar': {
@@ -91,7 +92,7 @@ const PlaylistPage: NextPage<PlaylistPageProps> = ({ playlist }) => {
   };
 
   return (
-    <AppLayout>
+    <Layout>
       <div style={styles.container}>
         <div style={styles.headerContainer}>
           <div style={styles.headerInfoContainer}>
@@ -117,7 +118,7 @@ const PlaylistPage: NextPage<PlaylistPageProps> = ({ playlist }) => {
           ))}
         </div>
       </div>
-    </AppLayout>
+    </Layout>
   );
 };
 
@@ -138,7 +139,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const jsonData = JSON.parse(fs.readFileSync(filePath, 'utf-8')) as Data;
   const playlists = jsonData.playlists;
 
-  const playlistId = params?.playlist?.toString(); // Ensure the playlistId is a string
+  const playlistId = params?.playlist?.toString(); 
   const playlist = playlists.find((pl) => pl.id === playlistId) || null;
 
   return {
