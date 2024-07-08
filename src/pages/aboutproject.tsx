@@ -68,7 +68,7 @@ export default function AboutProject() {
                     <div style={styles.infosubContainer}>
                         <h2>About The Project</h2>
                         <p>
-                        
+                    
                         </p>
                     </div>
 

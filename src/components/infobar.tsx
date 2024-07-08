@@ -19,6 +19,9 @@ export default function Infobar({ curSong, curPlaylist }: InfoBarProps) {
             width: "20vw",
             height: "100vh",
             backgroundColor: '#0C0C0C',
+            overflowY: "auto",
+            scrollbarWidth: "none", 
+            msOverflowStyle: "none",
         },
         container: {
             width: "100%",
@@ -26,6 +29,7 @@ export default function Infobar({ curSong, curPlaylist }: InfoBarProps) {
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
+            paddingBottom : "20%"
         },
         topbarContainer: {
             width: "100%",
@@ -64,6 +68,14 @@ export default function Infobar({ curSong, curPlaylist }: InfoBarProps) {
             alignItems: "center",
             justifyContent: "space-evenly",
             overflowX: "auto",
+            width: "100%",
+        },
+        linksContainer: {
+            width: "90%",
+            backgroundColor: "#342A21",
+            borderRadius: "10px",
+            padding: "2%",
+            marginTop: "10px",
         },
         aboutContainer: {
             width: "90%",
@@ -73,6 +85,8 @@ export default function Infobar({ curSong, curPlaylist }: InfoBarProps) {
             marginTop: "10px",
         },
     };
+
+    const descriptionLines = curSong.description.split('\n');
 
     return (
         <div style={styles.containertemp}>
@@ -88,33 +102,40 @@ export default function Infobar({ curSong, curPlaylist }: InfoBarProps) {
 
                 <div style={styles.bottombarContainer}>
                     <h4 style={{ margin: "0", fontSize: "1.25em", fontWeight: "bold" }}>{curSong.title}</h4>
-                    <h5 style={{ margin: "0", fontSize: "1em" }}>{curSong.description}</h5>
+                    <div>
+                        {descriptionLines.map((line: string, index: Key | null | undefined) => (
+                            <p key={index} style={{ margin: 0 }}>{line}</p>
+                        ))}
+                    </div>
                 </div>
 
                 <div style={styles.aboutContainer}>
-                    <h4 style={{ margin: "5px" }}>About the Project</h4>
+                    <h4 style={{ margin: "5px" }}>Tech Stack</h4>
                     <div style={styles.techStackContainer}>
-                        {techStack.map((tech, index) => (
+                        {techStack.map((tech, index: Key | null | undefined) => (
                             <div key={index}>
                                 <Image src={tech.image} alt={`${tech.name}-Image`} width={50} height={50} />
                                 <p style={{ margin: "0" }}>{tech.name}</p>
                             </div>
                         ))}
-                        {links.map((link : String, index: Key | null | undefined) => (
-                            <div key={index}>
-                                <a href={link} target="_blank" rel="noopener noreferrer">
-                                    <p style={{ margin: "0" }}>{link}</p>
-                                </a>
-                                
-                            </div>
-                        ))}
                     </div>
+                </div>
+
+                <div style={styles.linksContainer}>
+                    <h4 style={{ margin: "5px" }}>Links</h4>
+                    {links.map((link: string, index: Key | null | undefined) => (
+                        <div key={index}>
+                            <a href={link} target="_blank" rel="noopener noreferrer">
+                                <p style={{ margin: "0", width: "100%", overflowWrap: 'break-word' }}>{link}</p>
+                            </a>
+                        </div>
+                    ))}
                 </div>
 
                 {(credits && credits.length > 0) && (
                     <div>
                         <h4>Credits</h4>
-                        {credits.map((credit, index) => (
+                        {credits.map((credit: string, index: Key | null | undefined) => (
                             <p key={index}>{credit}</p>
                         ))}
                     </div>

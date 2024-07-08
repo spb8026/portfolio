@@ -142,7 +142,7 @@
         {
           "indexx": 0,
           "title": "First Citizens Banks Internship",
-          "description": "May 27th - Current\nWorking with the Enterprise Incident Management Team, I used my skills in application development to create an intuitive application for creating distribution lists, emails, as well as presentations to improve efficiency during an incident, remove tedious tasks, and room for error.",
+          "description": "(Morristown, NJ | 5/24 - Current)\n Working with the Enterprise Incident Management Team, I used my skills in application development to create an intuitive application for creating distribution lists, emails, as well as presentations to improve efficiency during an incident, remove tedious tasks, and room for error.",
           "links": [],
           "credits": [],
           "techStack": [
@@ -155,59 +155,69 @@
               "image": "/next.svg"
             }
           ],
-          "image": ""
+          "image": "/FCB"
         },
         {
           "indexx": 1,
           "title": "Student Note Taker",
-          "description": "Working to take accurate and effective notes for NTID students at RIT. I have taken notes for Calc 2, Multivariable Calculus, and Introduction to Software Engineering. (Henrietta, NY - 11/22-5/23, 1/24 - Present)",
+          "description": " (Henrietta, NY | 11/22-5/23, 1/24 - Present)\n Working to take accurate and effective notes for NTID students at RIT. I have taken notes for Calc 2, Multivariable Calculus, and Introduction to Software Engineering.",
           "links": [],
           "credits": [],
-          "techStack": []
+          "techStack": [],
+          "image": "/rit.png"
         },
         {
           "indexx": 2,
           "title": "Domino’s Delivery Driver",
-          "description": "Efficiently delivered and prepared Domino's products for safe and timely customer delivery. (Hamburg, NJ - 7/23-8/23)",
+          "description": "(Hamburg, NJ | 7/23-8/23)\n Efficiently delivered and prepared Domino's products for safe and timely customer delivery. ",
           "links": [],
           "credits": [],
-          "techStack": []
+          "techStack": [],
+          "image": "/dominos.png"
         },
         {
           "indexx": 3,
           "title": "Web-Design / Social Media Management",
-          "description": "Established and managed Instagram and Facebook profiles, resulting in a remarkable 340% growth in followers compared to prior endeavors for Instagram in 2 months. Designed and created a Webflow based site as a basis for information about Bryce Grier's professional trumpet career. (Remote - 7/22-Present)",
+          "description": " (Remote | 7/22-Present)\n Established and managed Instagram and Facebook profiles, resulting in a remarkable 340% growth in followers compared to prior endeavors for Instagram in 2 months. Designed and created a Webflow based site as a basis for information about Bryce Grier's professional trumpet career.",
           "links": [
             "https://www.instagram.com/talltimbersofficial/",
             ""
           ],
           "credits": [
           ],
-          "techStack": []
+          "techStack": [ {
+            "name": "Webflow",
+            "image": "/webflow.webp"
+            }
+          ],
+          "image": "/Red-Logo.png"
         },
         {
           "indexx": 4,
           "title": "Dunkin Crew Member",
-          "description": "Accurately created Dunkin' beverages in a fast-paced environment while efficiently satisfying customer needs through proactive interactions. (Vernon, NJ - 7/23-8/23)",
+          "description": " (Vernon, NJ | 7/23-8/23)\n Accurately created Dunkin' beverages in a fast-paced environment while efficiently satisfying customer needs through proactive interactions.",
           "links": [],
           "credits": [],
-          "techStack": []
+          "techStack": [],
+          "image": "/dunkin.png"
         },
         {
           "indexx": 5,
           "title": "Tall Timbers Maintenance Crew",
-          "description": "Performed landscaping, painting, and janitorial duties to maintain clean and presentable grounds, consistently working independently to enhance the aesthetics and functionality of the campground. (Vernon, NJ - 4/21-8/22)",
+          "description": "(Vernon, NJ | 4/21-8/22)\n Performed landscaping, painting, and janitorial duties to maintain clean and presentable grounds, consistently working independently to enhance the aesthetics and functionality of the campground.",
           "links": [],
           "credits": [],
-          "techStack": []
+          "techStack": [],
+          "image": "/tt.png"
         },
         {
           "indexx": 6,
           "title": "Mountain Creek Ski Resrort Cashier",
-          "description": "Handled transactions while upselling Season Passes to customers. (Vernon, NJ - 12/19-3/20)",
+          "description": "(Vernon, NJ | 12/19-3/20)\n Handled transactions while upselling Season Passes to customers.",
           "links": [],
           "credits": [],
-          "techStack": []
+          "techStack": [],
+          "image": "/mountaincreek.jpg"
         }
       ]
     },

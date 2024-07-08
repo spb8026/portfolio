@@ -6,7 +6,6 @@ import { Song } from '../models';
 import { usePlayer } from '@/context/PlayerContext';
 import data from '../data/data.json';
 
-
 type SongProps = {
     song: Song;
 };
@@ -23,6 +22,9 @@ export default function Song({ song }: SongProps) {
         handleSongChange(currentSong);
         handlePlayButtonClick(true);
     };
+
+    // Split the description into lines
+    const descriptionLines = currentSong.description.split('\n');
 
     return (
         <div
@@ -52,7 +54,11 @@ export default function Song({ song }: SongProps) {
             </div>
             <div style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
                 <p style={{ margin: 0, fontWeight: 'bold' }}>{currentSong.title}</p>
-                <p style={{ margin: 0 }}>{currentSong.description}</p>
+                <div style={{ margin: 0 }}>
+                    {descriptionLines.map((line, index) => (
+                        <p key={index} style={{ margin: 0 }}>{line}</p>
+                    ))}
+                </div>
             </div>
             <p style={{ width: '20%', textAlign: 'right', margin: 0 }}>68,123,124</p>
             <p style={{ width: '20%', textAlign: 'right', margin: 0, marginRight: '5px' }}>1:20</p>
