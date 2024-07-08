@@ -112,7 +112,7 @@ const PlaylistPage: NextPage<PlaylistPageProps> = ({ playlist }) => {
         </div>
 
         <div style={{ ...styles.songsContainer, ...styles.hideScrollbar }}>
-          {playlist.songs.map((song) => (
+          {playlist.songs.map((song : Song) => (
             <Song key={song.indexx} song={song} />
           ))}
         </div>

@@ -26,11 +26,110 @@
         {
           "indexx": 0,
           "title": "Java",
-          "description": "",
+          "description": "As my main language of choice, I have a wide array of experiances using Java and Object Orinted Programming a a whole. \n Noteable Projects Include: \n -Command Line Monopoly \n Hoppers Game with DFS Solver \n Springboot API for E-Store \n Algorithim and Data Strucutre Implementations (Dynamic Programming, Graphs, Ect.)",
+          "links": ["https://github.com/spb8026/Monopoly, https://github.com/RIT-SWEN-261-006/team-project-2235-swen-261-06-2b-wizards"],
+          "credits": [],
+          "techStack": [],
+          "image": "/java.webp"
+        },
+        {
+          "indexx": 1,
+          "title": "Python",
+          "description": "Used within Computer Science I for  basic programming introductions, data anlysis as well as to write scripts for Mock data for a PostgreSQL database using faker",
           "links": [],
           "credits": [],
           "techStack": [],
-          "image": ""
+          "image": "/python.webp"
+        },
+        {
+          "indexx": 2,
+          "title": "C",
+          "description": "Used to learn the basic's of low level languages and data manegment. Projects in mechnaics of Programming including building a Hash Table, Asteroids using curses, and a simple social netowrk.",
+          "links": [],
+          "credits": [],
+          "techStack": [],
+          "image": "/c.webp"
+        },
+        {
+          "indexx": 3,
+          "title": "C++",
+          "description": "Basic understanding of Object-Oriented Programming in C++.",
+          "links": [],
+          "credits": [],
+          "techStack": [],
+          "image": "/cpp.png"
+        },
+        {
+          "indexx": 4,
+          "title": "PostgreSQL",
+          "description": "Understanding of both design and implenentation of a database using Postgress.",
+          "links": [],
+          "credits": [],
+          "techStack": [],
+          "image": "/postgre.webp"
+        },
+        {
+          "indexx": 5,
+          "title": "Next JS",
+          "description": "Designed this site using Next JS",
+          "links": [],
+          "credits": [],
+          "techStack": [],
+          "image": "/next.svg"
+        },
+        {
+          "indexx": 6,
+          "title": "Angular",
+          "description": "Worked with a team to create a makeshift E-Store using Angular with my focus being on the cart section of the site.",
+          "links": ["https://github.com/RIT-SWEN-261-006/team-project-2235-swen-261-06-2b-wizards"],
+          "credits": [],
+          "techStack": [],
+          "image": "/angular.png"
+        },
+        {
+          "indexx": 7,
+          "title": "WebFlow",
+          "description": " Designed personal portfolio website's for peers using Webflow",
+          "links": ["https://jadyns-portfolio-909705.webflow.io/"],
+          "credits": [],
+          "techStack": [],
+          "image": "/webflow.webp"
+        },
+        {
+          "indexx": 8,
+          "title": "GIT",
+          "description": "Utilized GIT, Github, and GitLab for multiple projects. I have both practice with version control as well as Agile processes for pull requests and code reviews.",
+          "links": ["https://github.com/spb8026"],
+          "credits": [],
+          "techStack": [],
+          "image": "/git.png"
+        },
+        {
+          "indexx": 9,
+          "title": "Simple Systems Design / VHDL",
+          "description": "Basic understanding of logic systems design physically and using VHDL in a project.",
+          "links": [],
+          "credits": [],
+          "techStack": [],
+          "image": "/circuit.jpg"
+        },
+        {
+          "indexx": 10,
+          "title": "Autodesk Inventor",
+          "description": "Used autodesk for modeling and design of 3D objects within my Blind Turn Detection system Project",
+          "links": [],
+          "credits": [],
+          "techStack": [],
+          "image": "/inventor.png"
+        },
+        {
+          "indexx": 10,
+          "title": "Photoshop",
+          "description": "Used photoshop for making logos, graphics, and editing photos.",
+          "links": [],
+          "credits": [],
+          "techStack": [],
+          "image": "/photoshop.png"
         }
       ]
     },

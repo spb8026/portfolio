@@ -8,10 +8,10 @@ interface PlaybarProps {
   curPlaylist: Playlist;
   onSongForward: () => void;
   onSongBackward: () => void;
-  onPlayButtonClick: () => void; // Add this prop for handling infobar toggle
+  onPlayButtonClick: (state: boolean) => void; // Add this prop for handling infobar toggle
 }
 
-const Playbar = ({ curSong, curPlaylist, onSongForward, onSongBackward, onPlayButtonClick }: PlaybarProps) => {
+const Playbar = ({ curSong, curPlaylist, onSongForward, onSongBackward, toggleInfoBar }: PlaybarProps) => {
 
   const playbarStyle = {
     width: '100%',
@@ -128,7 +128,7 @@ const Playbar = ({ curSong, curPlaylist, onSongForward, onSongBackward, onPlayBu
           style={smallIconStyle}
           onMouseEnter={(e) => e.currentTarget.style.color = iconHoverStyle.color}
           onMouseLeave={(e) => e.currentTarget.style.color = iconStyle.color}
-          onClick={onPlayButtonClick}
+          onClick={toggleInfoBar}
         />
       </div>
     </div>

@@ -38,7 +38,8 @@ const MainContent = () => {
       marginRight: 'auto',
       width: '85%',
       height: '35vh',
-      padding: '10px'
+      padding: '10px',
+      overflow: 'hidden', // Ensures content doesn't overflow
     },
     albumCover: {
       width: '40%', // Adjust width to take up more space
@@ -48,14 +49,21 @@ const MainContent = () => {
     },
     playlistInfo: {
       maxWidth: '60%', // Adjust to leave space for album cover
+      overflow: 'hidden', // Ensure content doesn't overflow
     },
     title: {
-      fontSize: '48px',
-      margin: '0'
+      fontSize: '250%',
+      width: '100%',
+      margin: '0',
+      overflow: 'hidden', // Ensure text doesn't overflow
+      textOverflow: 'ellipsis', // Add ellipsis to truncated text
     },
     description: {
       fontSize: '16px',
-      color: '#ccc'
+      color: '#ccc',
+      whiteSpace: 'nowrap', // Prevent text from wrapping to the next line
+      overflow: 'hidden', // Ensure text doesn't overflow
+      textOverflow: 'ellipsis', // Add ellipsis to truncated text
     },
     playButton: {
       backgroundColor: '#C22222',
@@ -65,14 +73,14 @@ const MainContent = () => {
       cursor: 'pointer',
       marginRight: '10px',
       textDecoration: 'none',
-      color: 'black'
+      color: 'black',
     },
     followButton: {
       backgroundColor: '#C22222',
       border: 'none',
       borderRadius: '50px',
       padding: '10px 20px',
-      cursor: 'pointer'
+      cursor: 'pointer',
     },
     playlists: {
       display: 'flex',
@@ -80,7 +88,7 @@ const MainContent = () => {
       marginTop: '30px',
       overflow: 'scroll',
       scrollbarWidth: 'none',
-      height: '40vh'
+      height: '40vh',
     },
     playlistItem: {
       width: '30%',
@@ -102,7 +110,7 @@ const MainContent = () => {
       width: '25%',
       height: '100%',
       marginLeft: '10px',
-      marginRight: '30px'
+      marginRight: '30px',
     },
     playlistLink: {
       position: 'absolute' as 'absolute',

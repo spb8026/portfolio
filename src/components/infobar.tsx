@@ -1,7 +1,7 @@
 import { faCircleXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from 'next/image';
-import { CSSProperties } from 'react';
+import { CSSProperties, Key } from 'react';
 import { Playlist, Song } from '../models'; // Adjust the import path according to your project structure
 
 interface InfoBarProps {
@@ -11,6 +11,7 @@ interface InfoBarProps {
 
 export default function Infobar({ curSong, curPlaylist }: InfoBarProps) {
     const techStack = curSong.techStack;
+    const links = curSong.links;
     const credits = curSong.credits;
 
     const styles: { [key: string]: CSSProperties } = {
@@ -99,8 +100,15 @@ export default function Infobar({ curSong, curPlaylist }: InfoBarProps) {
                                 <p style={{ margin: "0" }}>{tech.name}</p>
                             </div>
                         ))}
+                        {links.map((link : String, index: Key | null | undefined) => (
+                            <div key={index}>
+                                <a href={link} target="_blank" rel="noopener noreferrer">
+                                    <p style={{ margin: "0" }}>{link}</p>
+                                </a>
+                                
+                            </div>
+                        ))}
                     </div>
-                    <p>{curSong.description}</p>
                 </div>
 
                 {(credits && credits.length > 0) && (

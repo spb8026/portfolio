@@ -6,7 +6,8 @@ type PlayerContextType = {
     currentSong: Song;
     currentPlaylist: Playlist;
     showInfobar: boolean;
-    handlePlayButtonClick: () => void;
+    handlePlayButtonClick: (state: boolean) => void;
+    toggleInfoBar: () => void;
     handlePlaylistChange: (playlist: Playlist) => void;
     handleSongChange: (song: Song) => void;
     handleSongForward: () => void;
@@ -20,7 +21,11 @@ export const PlayerProvider = ({ children }: { children: ReactNode }) => {
     const [currentPlaylist, setCurrentPlaylist] = useState(data.playlists[2]);
     const [currentSong, setCurrentSong] = useState(currentPlaylist.songs[0]);
 
-    const handlePlayButtonClick = () => {
+    const handlePlayButtonClick = (state: boolean) => {
+        setShowInfobar(state);
+    };
+
+    const toggleInfoBar = () => {
         setShowInfobar(!showInfobar);
     };
 
@@ -62,6 +67,7 @@ export const PlayerProvider = ({ children }: { children: ReactNode }) => {
                 currentPlaylist,
                 showInfobar,
                 handlePlayButtonClick,
+                toggleInfoBar,
                 handlePlaylistChange,
                 handleSongChange,
                 handleSongForward,

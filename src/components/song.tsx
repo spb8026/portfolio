@@ -21,7 +21,7 @@ export default function Song({ song }: SongProps) {
 
     const handlePlayClick = () => {
         handleSongChange(currentSong);
-        handlePlayButtonClick();
+        handlePlayButtonClick(true);
     };
 
     return (
