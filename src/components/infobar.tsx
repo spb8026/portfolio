@@ -18,14 +18,15 @@ export default function Infobar({ curSong, curPlaylist }: InfoBarProps) {
         containertemp: {
             width: "20vw",
             height: "100vh",
-            backgroundColor: '#0C0C0C',
+            backgroundColor: 'var(--sect-bg)',
             overflowY: "auto",
             scrollbarWidth: "none", 
             msOverflowStyle: "none",
+            borderLeft: "1vw solid var(--bg)",
         },
         container: {
             width: "100%",
-            height: "100%",
+            height: "auto",
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
@@ -44,7 +45,7 @@ export default function Infobar({ curSong, curPlaylist }: InfoBarProps) {
             paddingBottom: "90%",
             position: "relative",
             margin: "0 auto",
-            borderRadius: "5%",
+            backgroundColor: "var(--container-bg)",
         },
         image: {
             position: "absolute",
@@ -72,14 +73,14 @@ export default function Infobar({ curSong, curPlaylist }: InfoBarProps) {
         },
         linksContainer: {
             width: "90%",
-            backgroundColor: "#342A21",
+            backgroundColor: "var(--continaer-bg:)",
             borderRadius: "10px",
             padding: "2%",
             marginTop: "10px",
         },
         aboutContainer: {
             width: "90%",
-            backgroundColor: "#342A21",
+            backgroundColor: "var(--container-bg)",
             borderRadius: "10px",
             padding: "2%",
             marginTop: "10px",
@@ -102,7 +103,7 @@ export default function Infobar({ curSong, curPlaylist }: InfoBarProps) {
 
                 <div style={styles.bottombarContainer}>
                     <h4 style={{ margin: "0", fontSize: "1.25em", fontWeight: "bold" }}>{curSong.title}</h4>
-                    <div>
+                    <div >
                         {descriptionLines.map((line: string, index: Key | null | undefined) => (
                             <p key={index} style={{ margin: 0 }}>{line}</p>
                         ))}

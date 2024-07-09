@@ -23,7 +23,7 @@ const MainContent = () => {
       height: '100vh',
       margin: '0 auto',
       padding: '20px',
-      backgroundColor: '#342A21',
+      backgroundColor: 'var(--sect-bg)',
     },
     header: {
       display: 'flex',
@@ -34,7 +34,7 @@ const MainContent = () => {
       display: 'flex',
       alignItems: 'center',
       marginTop: '20px',
-      backgroundColor: '#0C0C0C',
+      backgroundColor: 'var(--container-bg)',
       marginLeft: 'auto',
       marginRight: 'auto',
       width: '85%',
@@ -61,23 +61,23 @@ const MainContent = () => {
     },
     description: {
       fontSize: '16px',
-      color: '#ccc',
+      color: 'var(--text)',
       whiteSpace: 'nowrap', // Prevent text from wrapping to the next line
       overflow: 'hidden', // Ensure text doesn't overflow
       textOverflow: 'ellipsis', // Add ellipsis to truncated text
     },
     playButton: {
-      backgroundColor: '#C22222',
+      backgroundColor: 'var(--button)',
       border: 'none',
       borderRadius: '50px',
       padding: '10px 20px',
       cursor: 'pointer',
       marginRight: '10px',
       textDecoration: 'none',
-      color: 'black',
+      color: 'var(--text)',
     },
     followButton: {
-      backgroundColor: '#C22222',
+      backgroundColor: 'var(--button)',
       border: 'none',
       borderRadius: '50px',
       padding: '10px 20px',
@@ -98,14 +98,14 @@ const MainContent = () => {
       padding: '10px',
       display: 'flex',
       alignItems: 'center',
-      backgroundColor: '#789581',
+      backgroundColor: 'var(--button)',
       borderRadius: '10px',
       overflow: 'hidden',
       cursor: 'pointer',
       position: 'relative' as 'relative', // Ensures the Link covers the entire div
     },
     playlistItemHovered: {
-      backgroundColor: '#C0C5C1',
+      backgroundColor: 'var(--button-hover)',
     },
     playlistImg: {
       width: '25%',
@@ -122,7 +122,7 @@ const MainContent = () => {
       zIndex: 1, // Ensures the Link is clickable over other elements
     },
     iconStyle: {
-      color: 'white',
+      color: 'var(--icon)',
       fontSize: '30px',
       cursor: 'pointer',
       transition: 'color 0.3s', // Smooth transition for the color change
@@ -132,7 +132,7 @@ const MainContent = () => {
       right: '30px',
       display: 'none',
       fontSize: '50px',
-      color: '#C22222',
+      color: 'var(--button)',
       zIndex: 2,
     },
     playIconVisible: {
@@ -143,7 +143,7 @@ const MainContent = () => {
       top: '40%',
       left: '45%',
       width: '50%',
-      backgroundColor: '#0C0C0C',
+      backgroundColor: 'var(--sect-bg)',
       border: '4px solid #C22222',
       borderRadius: '20px',
       dropShadow: '10px 10px 10px white',

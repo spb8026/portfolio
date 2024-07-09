@@ -33,7 +33,7 @@ export default function Song({ song }: SongProps) {
                 display: 'flex',
                 flexDirection: 'row',
                 alignItems: 'center',
-                backgroundColor: isHovered ? '#C0C5C1' : 'transparent',
+                backgroundColor: isHovered ? 'var(--song)' : 'transparent',
                 color: isHovered ? 'white' : 'inherit',
                 transition: 'background-color 0.3s, color 0.3s',
             }}

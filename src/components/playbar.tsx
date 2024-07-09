@@ -19,7 +19,7 @@ const Playbar = () => {
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
-    backgroundColor: '#0C0C0C',
+    backgroundColor: 'var(--container-bg)',
     position: 'fixed' as 'fixed',
     bottom: 0,
     padding: '0 10px', // Optional: add some padding to the sides
@@ -65,7 +65,7 @@ const Playbar = () => {
   };
 
   const iconStyle = {
-    color: 'white',
+    color: 'var(--icon)',
     fontSize: '30px',
     cursor: 'pointer',
     transition: 'color 0.3s', // Smooth transition for the color change
@@ -83,7 +83,7 @@ const Playbar = () => {
   };
 
   const smallIconStyle = {
-    color: 'white',
+    color: 'var(--icon)',
     fontSize: '20px',
     cursor: 'pointer',
     transition: 'color 0.3s', // Smooth transition for the color change

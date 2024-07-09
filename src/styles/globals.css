@@ -3,11 +3,15 @@
 
 
 :root {
-    --main-red: #C22222;
-    --background-brown: #342A21;
-    --beige-text: #EAF0CE;
-    --accent-silver: #C0C5C1;
-    --accent-black: #0C0C0C;
+    --bg : #0C0C0C;
+    --sect-bg: #160E0E;
+    --container-bg: #0C0C0C;
+    --button: #C22222;
+    --button-hover: #1a0d0e;
+    --text: #EAF0CE;  
+    --icon: #EAF0CE;
+    --song: #EAF0CE;
+    --song-hober: #C22222;
     background-color: #0C0C0C;
 }
 
@@ -26,3 +30,8 @@ body {
     margin: 0;
     overflow: hidden; /* Adjust as needed */
 }
+
+* {
+    box-sizing: border-box;
+}
+
