@@ -34,7 +34,7 @@ export default function AboutMe() {
           background: "linear-gradient(10deg, #0C0C0C, #0C0C0C, #C22222)", // Correct gradient syntax
         },
         infosubContainer: {
-          width: "30%",
+          width: "33.33%",
           height: "100%",
           display: "flex",
           flexDirection: "column",
