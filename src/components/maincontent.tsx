@@ -164,7 +164,7 @@ const MainContent = () => {
   return (
     <div style={styles.container}>
       <div style={styles.header}>
-        <Image src="/Red-Logo.png" alt="Logo" width={50} height={75} />
+        <Image src={"/portfolio" + "/Red-Logo.png"} alt="Logo" width={50} height={75} />
         <div style={{ display: 'flex', gap: '10px' }}>
           <a href="mailto:shawnbroderick658@gmail.com"><FontAwesomeIcon icon={faEnvelope} style={styles.iconStyle} onMouseEnter={(e) => e.currentTarget.style.color = '#ff5733'} onMouseLeave={(e) => e.currentTarget.style.color = 'white'} /> </a>
           <a href="https://github.com/spb8026" target="_blank" ><FontAwesomeIcon icon={faGithub} style={styles.iconStyle} onMouseEnter={(e) => e.currentTarget.style.color = '#ff5733'} onMouseLeave={(e) => e.currentTarget.style.color = 'white'} /> </a>
@@ -175,7 +175,7 @@ const MainContent = () => {
       <div style={styles.banner}>
         <div style={styles.albumCover}>
           <Image
-            src="/portrait.jpg"
+            src={ "/portfolio" +"/portrait.jpg"}
             alt="Album Cover"
             layout="fixed" 
             width={300} 

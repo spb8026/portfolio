@@ -93,7 +93,7 @@ const Playbar = () => {
     <div style={playbarStyle}>
       <div style={songInfoStyle}>
         <div style={imageWrapperStyle}>
-          <Image src={currentSong.image} alt="Music-Image" layout="fill" style={{ display: 'inline' }} />
+          <Image src={"/portfolio" + currentSong.image} alt="Music-Image" layout="fill" style={{ display: 'inline' }} />
         </div>
         <div style={descriptionWrapperStyle}>
           <p style={{ margin: '0px' }}>{currentSong.title}</p>

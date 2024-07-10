@@ -97,7 +97,7 @@ export default function Infobar({ curSong, curPlaylist }: InfoBarProps) {
                 </div>
 
                 <div style={styles.imageWrapper}>
-                    <Image src={curSong.image} alt={curSong.title} layout="fill" style={styles.image} />
+                    <Image src={"/portfolio" + curSong.image} alt={curSong.title} layout="fill" style={styles.image} />
                 </div>
 
                 <div style={styles.bottombarContainer}>
@@ -114,7 +114,7 @@ export default function Infobar({ curSong, curPlaylist }: InfoBarProps) {
                     <div style={styles.techStackContainer}>
                         {techStack.map((tech, index: Key | null | undefined) => (
                             <div key={index}>
-                                <Image src={tech.image} alt={`${tech.name}-Image`} width={50} height={50} />
+                                <Image src={"/portfolio" + tech.image} alt={`${tech.name}-Image`} width={50} height={50} />
                                 <p style={{ margin: "0" }}>{tech.name}</p>
                             </div>
                         ))}

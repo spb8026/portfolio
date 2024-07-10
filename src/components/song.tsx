@@ -49,7 +49,7 @@ export default function Song({ song }: SongProps) {
                 <h4 style={{ width: '5%', margin: 0 }}>{currentSong.indexx + 1}</h4>
             )}
             <div style={{ width: '50px', height: '50px', position: 'relative', marginRight: '10px' }}>
-                <Image src={currentSong.image} layout="fill" objectFit="contain" alt={currentSong.title} />
+                <Image src={"/portfolio" + currentSong.image} layout="fill" objectFit="contain" alt={currentSong.title} />
             </div>
             <div style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
                 <p style={{ margin: 0, fontWeight: 'bold' }}>{currentSong.title}</p>
