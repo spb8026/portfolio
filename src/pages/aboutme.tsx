@@ -14,13 +14,13 @@ export default function AboutMe() {
         headerContainer: {
           width: "100%",
           height: '40%',
-          position: "relative", // Ensure the text box is positioned relative to this container
+          position: "relative", 
           backgroundImage: "url('/temphead.jpg')",
-          backgroundSize: 'cover', // Ensure the background image covers the container
-          backgroundPosition: 'center', // Center the background image
+          backgroundSize: 'cover', 
+          backgroundPosition: 'center', 
         },
         headerTextBox: {
-          position: "absolute", // Position the text box absolutely within the header container
+          position: "absolute", 
           bottom: "0px",
           left: "20px",
         },
@@ -31,7 +31,7 @@ export default function AboutMe() {
           flexDirection: "row",
           justifyContent: "center",
           gap: "20px",
-          background: "linear-gradient(10deg, #0C0C0C, #0C0C0C, #C22222)", // Correct gradient syntax
+          background: "linear-gradient(10deg, #0C0C0C, #0C0C0C, #C22222)", 
         },
         infosubContainer: {
           width: "33.33%",

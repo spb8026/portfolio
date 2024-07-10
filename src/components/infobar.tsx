@@ -57,8 +57,8 @@ export default function Infobar({ curSong, curPlaylist }: InfoBarProps) {
         },
         bottombarContainer: {
             width: "100%",
-            minHeight: "30%", // Ensure minimum height
-            height: "auto", // Allow height to grow with content
+            minHeight: "30%", 
+            height: "auto", 
             display: "flex",
             flexDirection: "column",
             justifyContent: "center",

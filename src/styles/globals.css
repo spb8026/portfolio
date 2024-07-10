@@ -7,12 +7,12 @@
     --sect-bg: #160E0E;
     --container-bg: #0C0C0C;
     --button: #C22222;
-    --button-hover: #1a0d0e;
+    --button-hover: #c2222247;
     --text: #EAF0CE;  
     --icon: #EAF0CE;
     --song: #EAF0CE;
     --song-hover: #C22222;
-    background-color: #0C0C0C;
+    background-color: #0C0C0C; 
 }
 
 h1, h2, h3, h4, h5, h6{
@@ -23,12 +23,12 @@ h1, h2, h3, h4, h5, h6{
 
 p {
     color: #C22222;
-    font-family: 'Titillium Web', sans-serif; /* Fallback to sans-serif if Titillium Web is not available */
+    font-family: 'Titillium Web', sans-serif; 
 }
 
 body {
     margin: 0;
-    overflow: hidden; /* Adjust as needed */
+    overflow: hidden; 
 }
 
 * {

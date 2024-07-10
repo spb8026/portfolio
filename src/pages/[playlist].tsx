@@ -47,6 +47,12 @@ const PlaylistPage: NextPage<PlaylistPageProps> = ({ playlist }) => {
       flexDirection: 'row' as 'row',
       alignItems: 'center',
     },
+    headerText : {
+      fontSize: '4vw',
+    },
+    subText : {
+fontSize: '2vw',
+    },
     songHeader: {
       display: 'flex',
       flexDirection: 'row' as 'row',
@@ -96,7 +102,7 @@ const PlaylistPage: NextPage<PlaylistPageProps> = ({ playlist }) => {
       <div style={styles.container}>
         <div style={styles.headerContainer}>
           <div style={styles.headerInfoContainer}>
-            <FontAwesomeIcon icon={getFontAwesomeIcon(playlist.icon)} style={{ fontSize: '8vw', marginRight: '10px' }} />
+            <FontAwesomeIcon icon={getFontAwesomeIcon(playlist.icon)} style={{ fontSize: '18vw', marginRight: '10px' }} />
             <div style={styles.headerTextContainer}>
               <h1 style={styles.headerText}>{playlist.title}</h1>
               <p style={styles.subText}>2 Likes * {playlist.songs.length} songs * 132hr 26 min</p>

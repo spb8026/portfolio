@@ -23,7 +23,7 @@ export default function Song({ song }: SongProps) {
         handlePlayButtonClick(true);
     };
 
-    // Split the description into lines
+    
     const descriptionLines = currentSong.description.split('\n');
 
     return (

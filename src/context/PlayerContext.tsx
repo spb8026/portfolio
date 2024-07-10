@@ -16,6 +16,13 @@ type PlayerContextType = {
 
 const PlayerContext = createContext<PlayerContextType | undefined>(undefined);
 
+/**
+ * Creates a PlayerProvider component that provides player context to its children.
+ *
+ * @param {Object} props - The props object containing the children.
+ * @param {ReactNode} props.children - The children components.
+ * @return {JSX.Element} The PlayerProvider component.
+ */
 export const PlayerProvider = ({ children }: { children: ReactNode }) => {
     const [showInfobar, setShowInfobar] = useState(false);
     const [currentPlaylist, setCurrentPlaylist] = useState(data.playlists[2]);

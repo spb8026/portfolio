@@ -42,31 +42,30 @@ const MainContent = () => {
       width: '85%',
       height: '35vh',
       padding: '10px',
-      overflow: 'hidden', // Ensures content doesn't overflow
+      overflow: 'hidden', 
     },
     albumCover: {
-      width: '40%', // Adjust width to take up more space
-      height: '100%', // Ensure it fills the height of the parent container
+      width: '40%', 
+      height: '100%', 
       borderRadius: '10px',
-      overflow: 'hidden', // Ensure the image doesn't overflow its container
+      overflow: 'hidden', 
     },
     playlistInfo: {
-      maxWidth: '60%', // Adjust to leave space for album cover
-      overflow: 'hidden', // Ensure content doesn't overflow
+      maxWidth: '60%', 
+      overflow: 'hidden', 
     },
     title: {
       fontSize: '250%',
       width: '100%',
       margin: '0',
-      overflow: 'hidden', // Ensure text doesn't overflow
-      textOverflow: 'ellipsis', // Add ellipsis to truncated text
+      overflow: 'hidden', 
+      textOverflow: 'ellipsis', 
     },
     description: {
       fontSize: '16px',
       color: 'var(--text)',
-      whiteSpace: 'nowrap', // Prevent text from wrapping to the next line
-      overflow: 'hidden', // Ensure text doesn't overflow
-      textOverflow: 'ellipsis', // Add ellipsis to truncated text
+      whiteSpace: 'nowrap', 
+      textOverflow: 'ellipsis', 
     },
     playButton: {
       backgroundColor: 'var(--button)',
@@ -104,10 +103,10 @@ const MainContent = () => {
       borderRadius: '10px',
       overflow: 'hidden',
       cursor: 'pointer',
-      position: 'relative' as 'relative', // Ensures the Link covers the entire div
+      position: 'relative' as 'relative', 
     },
     playlistItemHovered: {
-      opacity: '0.5',
+      backgroundColor: 'var(--button-hover)',
       transform: 'scale(1.02)',
     },
     playlistImg: {
@@ -122,21 +121,22 @@ const MainContent = () => {
       left: 0,
       width: '100%',
       height: '100%',
-      zIndex: 1, // Ensures the Link is clickable over other elements
+      zIndex: 1, 
     },
     iconStyle: {
       color: 'var(--icon)',
       fontSize: '30px',
       cursor: 'pointer',
-      transition: 'color 0.3s', // Smooth transition for the color change
+      transition: 'color 0.3s', 
     },
     playIcon: {
       position: 'absolute' as 'absolute',
       right: '30px',
       display: 'none',
       fontSize: '50px',
-      color: 'var(--button)',
-      zIndex: 2,
+      color: 'var(--icon)',
+      opacity: 1,
+      zIndex: 3,
     },
     playIconVisible: {
       display: 'block',
@@ -177,9 +177,9 @@ const MainContent = () => {
           <Image
             src="/portrait.jpg"
             alt="Album Cover"
-            layout="fixed" // Use 'responsive' layout to adjust to container width
-            width={300} // Set a width that fits your layout
-            height={400} // Set a height that maintains aspect ratio
+            layout="fixed" 
+            width={300} 
+            height={400} 
           />
         </div>
         <div style={styles.playlistInfo}>

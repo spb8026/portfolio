@@ -20,6 +20,7 @@ const Sidebar = () => {
       display: 'flex',
       flexDirection: 'column',
       justifyContent: 'space-between',
+      position: 'relative',
     },
     topBar: {
       width: '100%',
@@ -55,6 +56,8 @@ const Sidebar = () => {
       flexShrink: 0,
       transition: 'transform 0.3s ease',
       cursor: 'pointer',
+      position: 'relative',
+      zIndex: 0,
     },
     boxHovered: {
       transform: 'scale(1.1)',
@@ -64,6 +67,18 @@ const Sidebar = () => {
     icon: {
       width: '60%',
       height: '60%',
+      position: 'relative',
+      zIndex: 0,
+    },
+    tooltip: {
+      position: 'absolute',
+      backgroundColor: 'var(--sect-bg)',
+      color: 'var(--text)',
+      padding: '5px 10px',
+      borderRadius: '5px',
+      boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.1)',
+      zIndex: 1000,
+      top: '70px',  
     },
   };
 
@@ -106,6 +121,11 @@ const Sidebar = () => {
             onClick={() => handlePlaylistChange(playlist)} 
           >
             <FontAwesomeIcon icon={getFontAwesomeIcon(playlist.icon)} style={styles.icon} />
+            {hoveredBox === playlist.id && (
+              <div style={styles.tooltip}>
+                {`${playlist.title} - ${playlist.songs.length} Songs`}
+              </div>
+            )}
           </div>
         ))}
       </div>
