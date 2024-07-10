@@ -18,7 +18,7 @@ export default function Layout({ children }: LayoutProps) {
     handleSongBackward,
   } = usePlayer();
 
-  const styles = {
+  const styles: { [key: string]: React.CSSProperties } = {
     container: {
       display: 'flex',
       flexDirection: 'row',
@@ -28,7 +28,7 @@ export default function Layout({ children }: LayoutProps) {
       flex: '0 0 6vw',
     },
     mainContainer: {
-      flex: '1',
+      flex: showInfobar ? '0 0 70vw' : '1',
       display: 'flex',
       flexDirection: 'column',
       overflowY: 'auto',
@@ -48,22 +48,11 @@ export default function Layout({ children }: LayoutProps) {
       <div style={styles.sidebarContainer}>
         <Sidebar />
       </div>
-      <div
-        style={{
-          ...styles.mainContainer,
-          flex: showInfobar ? '0 0 70vw' : '1',
-        }}
-      >
+      <div style={styles.mainContainer}>
         {children}
       </div>
       <div style={styles.playbarContainer}>
-        <Playbar
-          curSong={currentSong}
-          curPlaylist={currentPlaylist}
-          onSongForward={handleSongForward}
-          onSongBackward={handleSongBackward}
-          onPlayButtonClick={handlePlayButtonClick}
-        />
+        <Playbar />
       </div>
       {showInfobar && <Infobar curSong={currentSong} curPlaylist={currentPlaylist} />}
     </div>

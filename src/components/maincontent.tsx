@@ -3,9 +3,10 @@ import { faCirclePlay, faEnvelope, faPlay } from "@fortawesome/free-solid-svg-ic
 import Image from 'next/image';
 import Link from 'next/link';
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import { CSSProperties } from "react";
+
 
 import { getFontAwesomeIcon } from '../utils/iconUtils';
-import { Data, Playlist, Song } from '../models';
 import data from '../data/data.json'; // Import your data
 import { useState } from "react";
 import { usePlayer } from '@/context/PlayerContext';
@@ -19,7 +20,7 @@ const MainContent = () => {
   const [aboutHover, setAboutHover] = useState(false);
   const {handlePlaylistChange} = usePlayer();
 
-  const styles = {
+  const styles: { [key: string]: React.CSSProperties } = {
     container: {
       height: '100vh',
       margin: '0 auto',
@@ -149,7 +150,6 @@ const MainContent = () => {
       backgroundColor: 'var(--sect-bg)',
       border: '4px solid #C22222',
       borderRadius: '20px',
-      dropShadow: '10px 10px 10px white',
       display: 'none',
     },
     aboutBoxVisible: {

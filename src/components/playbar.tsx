@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBackwardStep, faForwardStep, faPause, faUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
-import { usePlayer } from '../context/PlayerContext'; 
+import { usePlayer } from '../context/PlayerContext';
 
 const Playbar = () => {
   const {
@@ -22,14 +22,14 @@ const Playbar = () => {
     backgroundColor: 'var(--container-bg)',
     position: 'fixed' as 'fixed',
     bottom: 0,
-    padding: '0 10px', 
+    padding: '0 10px',
   };
 
   const songInfoStyle = {
     display: 'flex',
     alignItems: 'center',
     flex: 1,
-    overflow: 'hidden', 
+    overflow: 'hidden',
   };
 
   const imageWrapperStyle = {
@@ -68,11 +68,11 @@ const Playbar = () => {
     color: 'var(--icon)',
     fontSize: '30px',
     cursor: 'pointer',
-    transition: 'color 0.3s', 
+    transition: 'color 0.3s',
   };
 
   const iconHoverStyle = {
-    color: '#ff5733', 
+    color: '#ff5733',
   };
 
   const smallIconContainerStyle = {
@@ -86,7 +86,7 @@ const Playbar = () => {
     color: 'var(--icon)',
     fontSize: '20px',
     cursor: 'pointer',
-    transition: 'color 0.3s', 
+    transition: 'color 0.3s',
   };
 
   return (
@@ -113,7 +113,7 @@ const Playbar = () => {
           style={{ ...iconStyle, margin: '25px' }}
           onMouseEnter={(e) => e.currentTarget.style.color = iconHoverStyle.color}
           onMouseLeave={(e) => e.currentTarget.style.color = iconStyle.color}
-          onClick={() => handlePlayButtonClick(true)} 
+          onClick={() => handlePlayButtonClick(true)}
         />
         <FontAwesomeIcon
           icon={faForwardStep}

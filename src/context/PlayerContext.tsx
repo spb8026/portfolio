@@ -1,5 +1,4 @@
 import { createContext, useContext, useState, ReactNode } from 'react';
-import { Data, Playlist, Song } from '../models';
 import data from '../data/data.json'; // Import your data
 
 type PlayerContextType = {

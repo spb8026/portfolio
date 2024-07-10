@@ -2,7 +2,6 @@ import { faCircleXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from 'next/image';
 import { CSSProperties, Key } from 'react';
-import { Playlist, Song } from '../models'; // Adjust the import path according to your project structure
 
 interface InfoBarProps {
     curSong: Song;

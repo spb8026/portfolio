@@ -2,7 +2,6 @@ import Image from 'next/image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlay } from '@fortawesome/free-solid-svg-icons';
 import { useState } from 'react';
-import { Song } from '../models';
 import { usePlayer } from '@/context/PlayerContext';
 import data from '../data/data.json';
 

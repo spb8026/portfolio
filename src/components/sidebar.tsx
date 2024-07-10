@@ -8,10 +8,10 @@ import { usePlayer } from '../context/PlayerContext';
 
 const Sidebar = () => {
   const [playlists, setPlaylists] = useState(data.playlists);
-  const [hoveredBox, setHoveredBox] = useState(null);
+  const [hoveredBox, setHoveredBox] = useState<String | null>(null);
   const { handlePlaylistChange } = usePlayer(); 
 
-  const styles = {
+  const styles: { [key: string]: React.CSSProperties } = {
     fullBar: {
       width: '100px',
       height: '100vh',

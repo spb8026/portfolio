@@ -3,13 +3,12 @@ import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 import fs from 'fs';
 import path from 'path';
-import { Playlist, Data } from '../models';
 import { usePlayer } from '@/context/PlayerContext';
-import Song from '@/components/Song';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMusic } from '@fortawesome/free-solid-svg-icons';
 import Layout, { AppLayout } from '@/components/Layout';
 import { getFontAwesomeIcon } from '@/utils/iconUtils';
+import Song from '@/components/song';
 
 interface PlaylistPageProps {
   playlist: Playlist | null;
@@ -24,7 +23,7 @@ const PlaylistPage: NextPage<PlaylistPageProps> = ({ playlist }) => {
     return <div>Loading...</div>;
   }
 
-  const styles = {
+  const styles: { [key: string]: React.CSSProperties } = {
     container: {
       width: '100%',
       height: '100vh', 
@@ -89,11 +88,6 @@ fontSize: '2vw',
       msOverflowStyle: 'none' as 'none',  
       scrollbarWidth: 'none' as 'none',  
       paddingBottom: '10vh',
-    },
-    hideScrollbar: {
-      '&::-webkit-scrollbar': {
-        display: 'none',
-      },
     },
   };
 
