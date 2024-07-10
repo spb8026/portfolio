@@ -9,6 +9,7 @@ import { Data, Playlist, Song } from '../models';
 import data from '../data/data.json'; // Import your data
 import { useState } from "react";
 import { usePlayer } from '@/context/PlayerContext';
+import { transform } from "next/dist/build/swc";
 
 
 const playlists = data.playlists;
@@ -28,6 +29,7 @@ const MainContent = () => {
     header: {
       display: 'flex',
       alignItems: 'center',
+      justifyContent: 'space-between',
       gap: '10px',
     },
     banner: {
@@ -105,7 +107,8 @@ const MainContent = () => {
       position: 'relative' as 'relative', // Ensures the Link covers the entire div
     },
     playlistItemHovered: {
-      backgroundColor: 'var(--button-hover)',
+      opacity: '0.5',
+      transform: 'scale(1.02)',
     },
     playlistImg: {
       width: '25%',
@@ -140,7 +143,7 @@ const MainContent = () => {
     },
     aboutBox: {
       position: 'absolute',
-      top: '40%',
+      top: '45%',
       left: '45%',
       width: '50%',
       backgroundColor: 'var(--sect-bg)',
@@ -161,9 +164,12 @@ const MainContent = () => {
   return (
     <div style={styles.container}>
       <div style={styles.header}>
-        <a href="mailto:shawnbroderick658@gmail.com"><FontAwesomeIcon icon={faEnvelope} style={styles.iconStyle} onMouseEnter={(e) => e.currentTarget.style.color = '#ff5733'} onMouseLeave={(e) => e.currentTarget.style.color = 'white'} /> </a>
-        <a href="https://github.com/spb8026" target="_blank" ><FontAwesomeIcon icon={faGithub} style={styles.iconStyle} onMouseEnter={(e) => e.currentTarget.style.color = '#ff5733'} onMouseLeave={(e) => e.currentTarget.style.color = 'white'} /> </a>
-        <a href="https://www.linkedin.com/in/shawn-broderick-24b736266/" target="_blank"><FontAwesomeIcon icon={faLinkedin} style={styles.iconStyle} onMouseEnter={(e) => e.currentTarget.style.color = '#ff5733'} onMouseLeave={(e) => e.currentTarget.style.color = 'white'} /></a>
+        <Image src="/Red-Logo.png" alt="Logo" width={50} height={75} />
+        <div style={{ display: 'flex', gap: '10px' }}>
+          <a href="mailto:shawnbroderick658@gmail.com"><FontAwesomeIcon icon={faEnvelope} style={styles.iconStyle} onMouseEnter={(e) => e.currentTarget.style.color = '#ff5733'} onMouseLeave={(e) => e.currentTarget.style.color = 'white'} /> </a>
+          <a href="https://github.com/spb8026" target="_blank" ><FontAwesomeIcon icon={faGithub} style={styles.iconStyle} onMouseEnter={(e) => e.currentTarget.style.color = '#ff5733'} onMouseLeave={(e) => e.currentTarget.style.color = 'white'} /> </a>
+          <a href="https://www.linkedin.com/in/shawn-broderick-24b736266/" target="_blank"><FontAwesomeIcon icon={faLinkedin} style={styles.iconStyle} onMouseEnter={(e) => e.currentTarget.style.color = '#ff5733'} onMouseLeave={(e) => e.currentTarget.style.color = 'white'} /></a>
+        </div>
       </div>
 
       <div style={styles.banner}>
@@ -199,7 +205,7 @@ const MainContent = () => {
           onMouseLeave={() => setHoveredBox(null)}
         >
             <FontAwesomeIcon icon={getFontAwesomeIcon(playlist.icon)} style={styles.playlistImg}></FontAwesomeIcon>
-            <h3 style={{ fontSize: '2rem' }}>{playlist.title}</h3>
+            <h3 style={{ fontSize: '2rem', width: '45%' }}>{playlist.title}</h3>
             <Link href={`/${playlist.id}`} style={styles.playlistLink}></Link>
             <FontAwesomeIcon
               icon={faCirclePlay}
