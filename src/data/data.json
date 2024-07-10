@@ -7,13 +7,22 @@
       "icon": "faCalendarDay",
       "songs": [
         {
-                    "indexx": 0,
-          "title": "Java",
-          "description": "",
+          "indexx": 0,
+          "title": "First Citizens Banks Internship",
+          "description": "(Morristown, NJ | 5/24 - Current)\n Working with the Enterprise Incident Management Team, I used my skills in application development to create an intuitive application for creating distribution lists, emails, as well as presentations to improve efficiency during an incident, remove tedious tasks, and room for error.",
           "links": [],
           "credits": [],
-          "techStack": [],
-          "image": ""
+          "techStack": [
+            {
+              "name": "Java",
+              "image": "/java.webp"
+            },
+            {
+              "name": "Next JS",
+              "image": "/next.svg"
+            }
+          ],
+          "image": "/FCB"
         }
       ]
     },
@@ -177,23 +186,6 @@
         },
         {
           "indexx": 3,
-          "title": "Web-Design / Social Media Management",
-          "description": " (Remote | 7/22-Present)\n Established and managed Instagram and Facebook profiles, resulting in a remarkable 340% growth in followers compared to prior endeavors for Instagram in 2 months. Designed and created a Webflow based site as a basis for information about Bryce Grier's professional trumpet career.",
-          "links": [
-            "https://www.instagram.com/talltimbersofficial/",
-            ""
-          ],
-          "credits": [
-          ],
-          "techStack": [ {
-            "name": "Webflow",
-            "image": "/webflow.webp"
-            }
-          ],
-          "image": "/Red-Logo.png"
-        },
-        {
-          "indexx": 4,
           "title": "Dunkin Crew Member",
           "description": " (Vernon, NJ | 7/23-8/23)\n Accurately created Dunkin' beverages in a fast-paced environment while efficiently satisfying customer needs through proactive interactions.",
           "links": [],
@@ -202,7 +194,7 @@
           "image": "/dunkin.png"
         },
         {
-          "indexx": 5,
+          "indexx": 3,
           "title": "Tall Timbers Maintenance Crew",
           "description": "(Vernon, NJ | 4/21-8/22)\n Performed landscaping, painting, and janitorial duties to maintain clean and presentable grounds, consistently working independently to enhance the aesthetics and functionality of the campground.",
           "links": [],
@@ -211,7 +203,7 @@
           "image": "/tt.png"
         },
         {
-          "indexx": 6,
+          "indexx": 5,
           "title": "Mountain Creek Ski Resrort Cashier",
           "description": "(Vernon, NJ | 12/19-3/20)\n Handled transactions while upselling Season Passes to customers.",
           "links": [],
@@ -236,7 +228,7 @@
           "techStack": [
             {
               "name": "Python",
-              "image": ""
+              "image": "/python.jpg"
             }
           ],
           "image": "/CSI.png"
@@ -250,7 +242,7 @@
           "techStack": [
             {
               "name": "Java",
-              "image": ""
+              "image": "/java.webp"
             }
           ],
           "image": "/CSII.png"
@@ -278,7 +270,7 @@
           "techStack": [
             {
               "name": "C++",
-              "image": ""
+              "image": "/cpp.png"
             }
           ],
           "image": "/CPP.png"
@@ -290,7 +282,7 @@
           "links": [],
           "credits": [],
           "techStack": [],
-          "image": ""
+          "image": "/theory.png"
         },
         {
           "indexx": 5,
@@ -315,11 +307,11 @@
           "techStack": [
             {
               "name": "PostgreSQL",
-              "image": ""
+              "image": "/postgre.webp"
             },
             {
               "name": "Java",
-              "image": ""
+              "image": "/java.webp"
             }
           ],
           "image": "/postgre.webp"
@@ -333,11 +325,11 @@
           "techStack": [
             {
               "name": "Angular",
-              "image": ""
+              "image": "/angular.png"
             },
             {
               "name": "Springboot",
-              "image": ""
+              "image": "/spring.png"
             }
           ],
           "image": "/SWEN.png"
@@ -352,17 +344,34 @@
       "songs": [
         {
           "indexx": 0,
-          "title": "",
-          "description": "",
-          "links": [],
+          "title": "Command Line Monopoly",
+          "description": "Small project where I re-created Monopoly as a command-line game to practice my object oriented Java skills.",
+          "links": ["https://github.com/spb8026/Monopoly"],
           "credits": [],
           "techStack": [
             {
-              "name": "",
-              "image": ""
+              "name": "Java",
+              "image": "/java.webp"
             }
           ],
-          "image": ""
+          "image": "/monopoly.png"
+        },
+        {
+          "indexx": 2,
+          "title": "Web-Design / Social Media Management",
+          "description": " (Remote | 7/22-Present)\n Established and managed Instagram and Facebook profiles, resulting in a remarkable 340% growth in followers compared to prior endeavors for Instagram in 2 months. Designed and created a Webflow based site as a basis for information about Bryce Grier's professional trumpet career.",
+          "links": [
+            "https://www.instagram.com/talltimbersofficial/",
+            ""
+          ],
+          "credits": [
+          ],
+          "techStack": [ {
+            "name": "Webflow",
+            "image": "/webflow.webp"
+            }
+          ],
+          "image": "/Red-Logo.png"
         }
       ]
     }
