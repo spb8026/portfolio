@@ -12,7 +12,6 @@ const styles: { [key: string]: CSSProperties } = {
     width: "100%",
     height: '40%',
     position: "relative", 
-    backgroundImage: "url('/temphead.jpg')",
     backgroundSize: 'cover', 
     backgroundPosition: 'center', 
   },
@@ -74,7 +73,7 @@ export default function AboutMe() {
             <p>BS in Computer Science</p>
             <p>GPA: 3.62</p>
             <p>Graduation: May 2027</p>
-            <Image src={"/portfolio" + "/portfolio/rit.png"} width={50} height={50} alt="RIT"/>
+            <Image src={"/portfolio/rit.png"} width={50} height={50} alt="RIT"/>
           </div>
         </div>
       </div>
