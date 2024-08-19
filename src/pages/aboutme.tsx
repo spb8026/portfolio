@@ -52,7 +52,7 @@ export default function AboutMe() {
               <p>Verified Developer</p>
             </div>
             <h1>Shawn Broderick</h1>
-            <p>112 Git Commits</p>
+            <p>973-570-0768 | shawnbroderick65@gmail.com</p>
           </div>
         </div>
         <div style={styles.infoContainer}>
