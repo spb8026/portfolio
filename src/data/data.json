@@ -177,6 +177,15 @@
         },
         {
           "indexx": 2,
+          "title": "Student Maintenance Worker",
+          "description": " (Henrietta, NY | 3/24-5/24)\n Helped take care of the RIT President's property at Liberty Hill.",
+          "links": [],
+          "credits": [],
+          "techStack": [],
+          "image": "/rit.png"
+        },
+        {
+          "indexx": 3,
           "title": "Domino’s Delivery Driver",
           "description": "(Hamburg, NJ | 7/23-8/23)\n Efficiently delivered and prepared Domino's products for safe and timely customer delivery. ",
           "links": [],
@@ -185,7 +194,7 @@
           "image": "/dominos.png"
         },
         {
-          "indexx": 3,
+          "indexx": 4,
           "title": "Dunkin Crew Member",
           "description": " (Vernon, NJ | 7/23-8/23)\n Accurately created Dunkin' beverages in a fast-paced environment while efficiently satisfying customer needs through proactive interactions.",
           "links": [],
@@ -194,7 +203,7 @@
           "image": "/dunkin.png"
         },
         {
-          "indexx": 3,
+          "indexx": 5,
           "title": "Tall Timbers Maintenance Crew",
           "description": "(Vernon, NJ | 4/21-8/22)\n Performed landscaping, painting, and janitorial duties to maintain clean and presentable grounds, consistently working independently to enhance the aesthetics and functionality of the campground.",
           "links": [],
@@ -203,7 +212,7 @@
           "image": "/tt.png"
         },
         {
-          "indexx": 5,
+          "indexx": 6,
           "title": "Mountain Creek Ski Resrort Cashier",
           "description": "(Vernon, NJ | 12/19-3/20)\n Handled transactions while upselling Season Passes to customers.",
           "links": [],
