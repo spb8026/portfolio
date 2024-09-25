@@ -8,21 +8,39 @@
       "songs": [
         {
           "indexx": 0,
-          "title": "First Citizens Banks Internship",
-          "description": "(Morristown, NJ | 5/24 - Current)\n Working with the Enterprise Incident Management Team, I used my skills in application development to create an intuitive application for creating distribution lists, emails, as well as presentations to improve efficiency during an incident, remove tedious tasks, and room for error.",
+          "title": "Roomates Progressive Web App",
+          "description": "Developing a progressive web app in Next.js to be used by roomates. This will include a shared calendar, split payments, a live text chat, as well as the ability to make request to alter/add/exchange chores.",
           "links": [],
           "credits": [],
           "techStack": [
             {
-              "name": "Java",
-              "image": "/java.webp"
-            },
-            {
               "name": "Next JS",
               "image": "/next.svg"
+            },
+            {
+              "name": "Supabase",
+              "image": "/supabase.png"
             }
           ],
-          "image": "/FCB"
+          "image": "/roomates.png"
+        },
+        {
+          "indexx": 1,
+          "title": "Arduino Enchanced Beer-Pong Table",
+          "description": "Utilizing an Arduino and Ultra-Sonic sensor's to create an enchacned Beer-Pong table.",
+          "links": [],
+          "credits": [],
+          "techStack": [
+            {
+              "name": "Python ",
+              "image": "/python.jpg"
+            },
+            {
+              "name": "Arduino",
+              "image": "/arduino.png"
+            }
+          ],
+          "image": "/roomates.png"
         }
       ]
     },
@@ -342,6 +360,72 @@
             }
           ],
           "image": "/SWEN.png"
+        },
+        {
+          "indexx": 8,
+          "title": "Intro to Artificial Intelligence",
+          "description": "Introduction to the theory behind modern Artificial Intelligence. \n Project: \n Given a map image where each pixel represents a type of terrain, used A* search to find the most optimal path across goal locations.",
+          "links": ["https://github.com/spb8026/AI_lab1_AStar"],
+          "credits": [],
+          "techStack": [
+            {
+              "name": "Java",
+              "image": "/java.webp"
+            }
+          ],
+          "image": "/AI_map.jpg"
+        },
+        {
+          "indexx": 8,
+          "title": "Programming Language Concepts",
+          "description": "Overview of how different programming languages are implemented. Learning Scheme, SmallTalk and Bash. \n Project: \n Developing a translator for a fake programming language in Java. ",
+          "links": ["https://github.com/apc5074/Team12Compiler"],
+          "credits": [],
+          "techStack": [
+            {
+              "name": "Java",
+              "image": "/java.webp"
+            },
+            {
+              "name": "Scheme",
+              "image": "/scheme.svg"
+            }
+          ],
+          "image": "/PLC.png"
+        },
+        {
+          "indexx": 8,
+          "title": "Intro to Artificial Intelligence",
+          "description": "Introduction to the theory behind modern Artificial Intelligence. \n Project: \n Given a map image where each pixel represents a type of terrain, used A* search to find the most optimal path across goal locations.",
+          "links": ["https://github.com/spb8026/AI_lab1_AStar"],
+          "credits": [],
+          "techStack": [
+            {
+              "name": "Java",
+              "image": "/java.webp"
+            }
+          ],
+          "image": "/AI_map.jpg"
+        },
+        {
+          "indexx": 9,
+          "title": "Graph Theory",
+          "description": "Overview of the mathematical theory behind Graph Theory.",
+          "links": [],
+          "credits": [],
+          "techStack": [
+          ],
+          "image": ""
+        },
+        {
+          "indexx": 10,
+          "title": "Math: Simulation and Randomness",
+          "description": "Overview of the computational methods for producing random numbers.",
+          "links": [],
+          "credits": [],
+          "techStack": [
+          ],
+          "image": ""
         }
       ]
     },
