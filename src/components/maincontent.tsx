@@ -1,231 +1,194 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCirclePlay, faEnvelope, faPlay } from "@fortawesome/free-solid-svg-icons";
+import { faCirclePlay, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import Image from 'next/image';
 import Link from 'next/link';
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
-import { CSSProperties } from "react";
-
-
-import { getFontAwesomeIcon } from '../utils/iconUtils';
-import data from '../data/data.json'; // Import your data
 import { useState } from "react";
 import { usePlayer } from '@/context/PlayerContext';
-import { transform } from "next/dist/build/swc";
-
+import { getFontAwesomeIcon } from '../utils/iconUtils';
+import data from '../data/data.json';
 
 const playlists = data.playlists;
 
 const MainContent = () => {
-  const [hoveredBox, setHoveredBox] = useState<String | null>(null);
+  const [hoveredBox, setHoveredBox] = useState<string | null>(null);
   const [aboutHover, setAboutHover] = useState(false);
-  const {handlePlaylistChange} = usePlayer();
+  const { handlePlaylistChange } = usePlayer();
 
-  const styles: { [key: string]: React.CSSProperties } = {
-    container: {
-      height: '100vh',
-      margin: '0 auto',
-      padding: '20px',
-      backgroundColor: 'var(--sect-bg)',
-    },
-    header: {
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'space-between',
-      gap: '10px',
-    },
-    banner: {
-      display: 'flex',
-      alignItems: 'center',
-      marginTop: '20px',
-      backgroundColor: 'var(--container-bg)',
-      marginLeft: 'auto',
-      marginRight: 'auto',
-      width: '85%',
-      height: '35vh',
-      padding: '10px',
-      overflow: 'hidden', 
-    },
-    albumCover: {
-      width: '40%', 
-      height: '100%', 
-      borderRadius: '10px',
-      overflow: 'hidden', 
-    },
-    playlistInfo: {
-      maxWidth: '60%', 
-      overflow: 'hidden', 
-    },
-    title: {
-      fontSize: '250%',
-      width: '100%',
-      margin: '0',
-      overflow: 'hidden', 
-      textOverflow: 'ellipsis', 
-    },
-    description: {
-      fontSize: '16px',
-      color: 'var(--text)',
-      whiteSpace: 'nowrap', 
-      textOverflow: 'ellipsis', 
-    },
-    playButton: {
-      backgroundColor: 'var(--button)',
-      border: 'none',
-      borderRadius: '50px',
-      padding: '10px 20px',
-      cursor: 'pointer',
-      marginRight: '10px',
-      textDecoration: 'none',
-      color: 'var(--text)',
-    },
-    followButton: {
-      backgroundColor: 'var(--button)',
-      border: 'none',
-      borderRadius: '50px',
-      padding: '10px 20px',
-      cursor: 'pointer',
-    },
-    playlists: {
-      display: 'flex',
-      flexWrap: 'wrap',
-      marginTop: '30px',
-      overflow: 'scroll',
-      scrollbarWidth: 'none',
-      height: '40vh',
-    },
-    playlistItem: {
-      width: '29%',
-      height: '35%',
-      margin: '1%',
-      padding: '10px',
-      display: 'flex',
-      alignItems: 'center',
-      backgroundColor: 'var(--button)',
-      borderRadius: '10px',
-      overflow: 'hidden',
-      cursor: 'pointer',
-      position: 'relative' as 'relative', 
-    },
-    playlistItemHovered: {
-      backgroundColor: 'var(--button-hover)',
-      transform: 'scale(1.02)',
-    },
-    playlistImg: {
-      width: '25%',
-      height: '100%',
-      marginLeft: '10px',
-      marginRight: '30px',
-    },
-    playlistLink: {
-      position: 'absolute' as 'absolute',
-      top: 0,
-      left: 0,
-      width: '100%',
-      height: '100%',
-      zIndex: 1, 
-    },
-    iconStyle: {
-      color: 'var(--icon)',
-      fontSize: '30px',
-      cursor: 'pointer',
-      transition: 'color 0.3s', 
-    },
-    playIcon: {
-      position: 'absolute' as 'absolute',
-      right: '30px',
-      display: 'none',
-      fontSize: '50px',
-      color: 'var(--icon)',
-      opacity: 1,
-      zIndex: 3,
-    },
-    playIconVisible: {
-      display: 'block',
-    },
-    aboutBox: {
-      position: 'absolute',
-      top: '45%',
-      left: '45%',
-      width: '50%',
-      backgroundColor: 'var(--sect-bg)',
-      border: '4px solid #C22222',
-      borderRadius: '20px',
-      display: 'none',
-    },
-    aboutBoxVisible: {
-      display: 'block',
-    }
+  const iconHoverColor = '#ff5733';
+  const iconBaseColor = 'white';
+
+  const handlePlayButtonClick = (playlist: Playlist) => {
+    handlePlaylistChange(playlist);
   };
 
-  function handlePlayButtonClick(playlist: Playlist) {
-    handlePlaylistChange(playlist);
-  }
-
   return (
-    <div style={styles.container}>
-      <div style={styles.header}>
-        <Image src={"/portfolio" + "/Red-Logo.png"} alt="Logo" width={50} height={75} />
-        <div style={{ display: 'flex', gap: '10px' }}>
-          <a href="mailto:shawnbroderick658@gmail.com"><FontAwesomeIcon icon={faEnvelope} style={styles.iconStyle} onMouseEnter={(e) => e.currentTarget.style.color = '#ff5733'} onMouseLeave={(e) => e.currentTarget.style.color = 'white'} /> </a>
-          <a href="https://github.com/spb8026" target="_blank" ><FontAwesomeIcon icon={faGithub} style={styles.iconStyle} onMouseEnter={(e) => e.currentTarget.style.color = '#ff5733'} onMouseLeave={(e) => e.currentTarget.style.color = 'white'} /> </a>
-          <a href="https://www.linkedin.com/in/shawn-broderick-24b736266/" target="_blank"><FontAwesomeIcon icon={faLinkedin} style={styles.iconStyle} onMouseEnter={(e) => e.currentTarget.style.color = '#ff5733'} onMouseLeave={(e) => e.currentTarget.style.color = 'white'} /></a>
+    <div style={{
+      height: '100vh',
+      margin: '0 auto',
+      padding: '1.25rem',
+      backgroundColor: 'var(--sect-bg)',
+    }}>
+      {/* Header */}
+      <div style={{
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        gap: '1rem',
+      }}>
+        <Image src="/portfolio/Red-Logo.png" alt="Logo" width={50} height={75} />
+        <div style={{ display: 'flex', gap: '1rem' }}>
+          {[{
+            href: "mailto:shawnbroderick658@gmail.com", icon: faEnvelope
+          }, {
+            href: "https://github.com/spb8026", icon: faGithub
+          }, {
+            href: "https://www.linkedin.com/in/shawn-broderick-24b736266/", icon: faLinkedin
+          }].map(({ href, icon }, idx) => (
+            <a key={idx} href={href} target="_blank" rel="noopener noreferrer">
+              <FontAwesomeIcon
+                icon={icon}
+                style={{
+                  color: iconBaseColor,
+                  fontSize: '1.75rem',
+                  cursor: 'pointer',
+                  transition: 'color 0.3s',
+                }}
+                onMouseEnter={e => e.currentTarget.style.color = iconHoverColor}
+                onMouseLeave={e => e.currentTarget.style.color = iconBaseColor}
+              />
+            </a>
+          ))}
         </div>
       </div>
 
-      <div style={styles.banner}>
-        <div style={styles.albumCover}>
-          <Image
-            src={ "/portfolio" +"/portrait.jpg"}
-            alt="Album Cover"
-            layout="fixed" 
-            width={300} 
-            height={400} 
-          />
+      {/* Banner */}
+      <div style={{
+        display: 'flex',
+        alignItems: 'center',
+        marginTop: '1.5rem',
+        backgroundColor: 'var(--container-bg)',
+        marginInline: 'auto',
+        width: '85%',
+        height: '35vh',
+        padding: '0.75rem',
+        overflow: 'hidden',
+        borderRadius: '1rem',
+      }}>
+        <div style={{
+          width: '40%',
+          height: '100%',
+          borderRadius: '1rem',
+          overflow: 'hidden',
+        }}>
+          <Image src="/portfolio/portrait.jpg" alt="Album Cover" width={300} height={400} />
         </div>
-        <div style={styles.playlistInfo}>
-          <h1 style={styles.title}>Shawn Broderick - Software Engineer / Computer Science Student</h1>
-          <p style={styles.description}>Welcome to my Spotify inspired portfolio!</p>
-          <Link href="/aboutme" style={styles.playButton}>About Me</Link>
-          <button style={styles.followButton}
-            onMouseEnter={() => setAboutHover(true)}
-            onMouseLeave={() => setAboutHover(false)}
-          
-          >About this Project</button>
-        </div>
-      </div>
-
-      <div style={styles.playlists}>
-        {playlists.map((playlist, index) => (
-          <div key={index}
-          style={{
-            ...styles.playlistItem,
-            ...(hoveredBox === playlist.id && styles.playlistItemHovered),
-          }}
-          onMouseEnter={() => setHoveredBox(playlist.id)}
-          onMouseLeave={() => setHoveredBox(null)}
-        >
-            <FontAwesomeIcon icon={getFontAwesomeIcon(playlist.icon)} style={styles.playlistImg}></FontAwesomeIcon>
-            <h3 style={{ fontSize: '2rem', width: '45%' }}>{playlist.title}</h3>
-            <Link href={`/${playlist.id}`} style={styles.playlistLink}></Link>
-            <FontAwesomeIcon
-              icon={faCirclePlay}
+        <div style={{ maxWidth: '60%', paddingLeft: '1rem' }}>
+          <h1 style={{ fontSize: '2.25rem', margin: 0 }}>Shawn Broderick - Software Engineer / CS Student</h1>
+          <p style={{ fontSize: '1rem', color: 'var(--text)', whiteSpace: 'nowrap', textOverflow: 'ellipsis', overflow: 'hidden' }}>
+            Welcome to my Spotify inspired portfolio!
+          </p>
+          <div style={{ marginTop: '1rem', display: 'flex', gap: '1rem' }}>
+            <Link href="/aboutme" style={{
+              backgroundColor: 'var(--button)',
+              borderRadius: '2rem',
+              padding: '0.5rem 1rem',
+              textDecoration: 'none',
+              color: 'var(--text)',
+              fontSize: '1rem',
+            }}>About Me</Link>
+            <button
               style={{
-                ...styles.playIcon,
-                ...(hoveredBox === playlist.id && styles.playIconVisible),
+                backgroundColor: 'var(--button)',
+                border: 'none',
+                borderRadius: '2rem',
+                padding: '0.5rem 1rem',
+                cursor: 'pointer',
+                fontSize: '1rem',
+                color: 'var(--text)',
               }}
-              onClick={() => handlePlayButtonClick(playlist)}
-              />            
+              onMouseEnter={() => setAboutHover(true)}
+              onMouseLeave={() => setAboutHover(false)}
+            >
+              About this Project
+            </button>
           </div>
-        ))}
+        </div>
       </div>
-      <div 
-          style={{
-            ...styles.aboutBox,
-           ...(aboutHover === true && styles.playIconVisible),
-        }}
-        >
-        <p>
-        After exploring numerous ideas for a unique portfolio, I realized that the perfect inspiration had been right in front of me all along. Music is an integral part of my life, accompanying me in almost every aspect of my day to day. Given my affinity for Spotify, I decided to draw UI/UX inspiration from it and create a portfolio that is a creative parody of the platform. To elevate the challenge, I chose to learn and implement both Next.js and React for this project. This decision not only allowed me to enhance my technical skills but also to deliver a seamless and engaging user experience reminiscent of my favorite music application.
+
+      {/* Playlists */}
+      <div style={{
+        display: 'flex',
+        flexWrap: 'wrap',
+        gap: '1rem',
+        marginTop: '2rem',
+        overflowY: 'scroll',
+        scrollbarWidth: 'none',
+        height: '30vh',
+      }}>
+        {playlists.map((playlist, index) => {
+          const isHovered = hoveredBox === playlist.id;
+          return (
+            <div
+              key={index}
+              onMouseEnter={() => setHoveredBox(playlist.id)}
+              onMouseLeave={() => setHoveredBox(null)}
+              style={{
+                width: '30%',
+                padding: '0.75rem',
+                display: 'flex',
+                alignItems: 'center',
+                backgroundColor: isHovered ? 'var(--button-hover)' : 'var(--button)',
+                borderRadius: '0.75rem',
+                position: 'relative',
+                cursor: 'pointer',
+                transition: 'transform 0.2s ease',
+                transform: isHovered ? 'scale(1.02)' : 'scale(1)',
+              }}
+            >
+              <FontAwesomeIcon icon={getFontAwesomeIcon(playlist.icon)} style={{
+                fontSize: '2rem',
+                marginInline: '1rem',
+              }} />
+              <h3 style={{ fontSize: '1.5rem', flexGrow: 1 }}>{playlist.title}</h3>
+              <Link href={`/${playlist.id}`} style={{
+                position: 'absolute',
+                top: 0, left: 0,
+                width: '100%', height: '100%',
+                zIndex: 1,
+              }} />
+              <FontAwesomeIcon
+                icon={faCirclePlay}
+                style={{
+                  position: 'absolute',
+                  right: '1rem',
+                  fontSize: '2.5rem',
+                  color: 'var(--icon)',
+                  opacity: isHovered ? 1 : 0,
+                  transition: 'opacity 0.2s ease',
+                  zIndex: 2,
+                }}
+                onClick={() => handlePlayButtonClick(playlist)}
+              />
+            </div>
+          );
+        })}
+      </div>
+
+      {/* About Box */}
+      <div style={{
+        position: 'absolute',
+        top: '45%',
+        left: '25%',
+        width: '50%',
+        backgroundColor: 'var(--sect-bg)',
+        border: '4px solid #C22222',
+        borderRadius: '1rem',
+        padding: '1rem',
+        display: aboutHover ? 'block' : 'none',
+      }}>
+        <p style={{ fontSize: '1rem' }}>
+          After exploring numerous ideas for a unique portfolio, I realized that the perfect inspiration had been right in front of me all along...
         </p>
       </div>
     </div>

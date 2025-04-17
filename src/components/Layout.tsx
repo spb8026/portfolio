@@ -13,33 +13,34 @@ export default function Layout({ children }: LayoutProps) {
     showInfobar,
     currentPlaylist,
     currentSong,
-    handlePlayButtonClick,
-    handleSongForward,
-    handleSongBackward,
   } = usePlayer();
 
   const styles: { [key: string]: React.CSSProperties } = {
     container: {
       display: 'flex',
-      flexDirection: 'row',
       height: '100vh',
+      width: '100vw',
+      overflow: 'hidden',
     },
     sidebarContainer: {
-      flex: '0 0 6vw',
+      flexBasis: '5rem',
+      flexShrink: 0,
     },
     mainContainer: {
-      flex: showInfobar ? '0 0 70vw' : '1',
+      flexGrow: 1,
       display: 'flex',
       flexDirection: 'column',
       overflowY: 'auto',
-      position: 'relative',
-      transition: 'flex 0.3s',
+      paddingBottom: '4.5rem', // reserve space for Playbar
+      transition: 'all 0.3s ease',
     },
     playbarContainer: {
-      flex: '0 0 6vh',
-      position: 'absolute',
+      height: '4.5rem',
+      position: 'fixed',
       bottom: 0,
-      width: '100%',
+      left: '5rem', // same width as sidebar
+      right: 0,
+      zIndex: 1000,
     },
   };
 
@@ -54,7 +55,9 @@ export default function Layout({ children }: LayoutProps) {
       <div style={styles.playbarContainer}>
         <Playbar />
       </div>
-      {showInfobar && <Infobar curSong={currentSong} curPlaylist={currentPlaylist} />}
+      {showInfobar && (
+        <Infobar curSong={currentSong} curPlaylist={currentPlaylist} />
+      )}
     </div>
   );
 }
