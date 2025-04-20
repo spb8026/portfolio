@@ -109,7 +109,7 @@ export default function Infobar({ curSong, curPlaylist }: InfoBarProps) {
                     </div>
                 </div>
 
-                <div style={styles.aboutContainer}>
+                 { (techStack.length !== 0) && <div style={styles.aboutContainer}>
                     <h4 style={{ margin: "5px" }}>Tech Stack</h4>
                     <div style={styles.techStackContainer}>
                         {techStack.map((tech, index: Key | null | undefined) => (
@@ -119,9 +119,9 @@ export default function Infobar({ curSong, curPlaylist }: InfoBarProps) {
                             </div>
                         ))}
                     </div>
-                </div>
+                </div> }
 
-                <div style={styles.linksContainer}>
+                { (links.length !== 0) &&  <div style={styles.linksContainer}>
                     <h4 style={{ margin: "5px" }}>Links</h4>
                     {links.map((link: string, index: Key | null | undefined) => (
                         <div key={index}>
@@ -131,6 +131,7 @@ export default function Infobar({ curSong, curPlaylist }: InfoBarProps) {
                         </div>
                     ))}
                 </div>
+                }
 
                 {(credits && credits.length > 0) && (
                     <div>

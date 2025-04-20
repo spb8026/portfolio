@@ -178,7 +178,7 @@ const MainContent = () => {
       {/* About Box */}
       <div style={{
         position: 'absolute',
-        top: '45%',
+        top: '50%',
         left: '25%',
         width: '50%',
         backgroundColor: 'var(--sect-bg)',
@@ -187,8 +187,9 @@ const MainContent = () => {
         padding: '1rem',
         display: aboutHover ? 'block' : 'none',
       }}>
+        
         <p style={{ fontSize: '1rem' }}>
-          After exploring numerous ideas for a unique portfolio, I realized that the perfect inspiration had been right in front of me all along...
+        After exploring numerous ideas for a unique portfolio, I realized that the perfect inspiration had been right in front of me all along. Music is an integral part of my life, accompanying me in almost every aspect of my day to day. Given my affinity for Spotify, I decided to draw UI/UX inspiration from it and create a portfolio that is a creative parody of the platform. To elevate the challenge, I chose to learn and implement both Next.js and React for this project. This decision not only allowed me to enhance my technical skills but also to deliver a seamless and engaging user experience reminiscent of my favorite music application.
         </p>
       </div>
     </div>

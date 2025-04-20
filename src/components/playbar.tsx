@@ -1,134 +1,141 @@
 import Image from "next/image";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBackwardStep, faForwardStep, faPause, faUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
+import {
+  faBackwardStep,
+  faForwardStep,
+  faPause,
+  faUpRightFromSquare
+} from "@fortawesome/free-solid-svg-icons";
 import { usePlayer } from '../context/PlayerContext';
 
 const Playbar = () => {
   const {
     currentSong,
-    currentPlaylist,
     handleSongForward,
     handleSongBackward,
     handlePlayButtonClick,
     toggleInfoBar,
   } = usePlayer();
 
-  const playbarStyle = {
-    width: '100%',
-    height: '6vh',
-    display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    backgroundColor: 'var(--container-bg)',
-    position: 'fixed' as 'fixed',
-    bottom: 0,
-    padding: '0 10px',
+  const styles = {
+    playbar: {
+      width: '100%',
+      height: '6vh',
+      display: 'flex',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+      backgroundColor: 'var(--container-bg)',
+      position: 'fixed' as const,
+      bottom: 0,
+      padding: '0 10px',
+    },
+    songInfo: {
+      display: 'flex',
+      alignItems: 'center',
+      flex: 1,
+      overflow: 'hidden',
+    },
+    imageWrapper: {
+      width: '40px',
+      height: '40px',
+      position: 'relative' as const,
+      marginRight: '20px',
+      marginLeft: '5px',
+      flexShrink: 0,
+    },
+    descriptionWrapper: {
+      display: 'flex',
+      flexDirection: 'column' as const,
+      overflow: 'hidden',
+      whiteSpace: 'nowrap' as const,
+    },
+    description: {
+      margin: '0px',
+      whiteSpace: 'nowrap' as const,
+      overflow: 'hidden',
+      width: '100%',
+    },
+    iconContainer: {
+      width: '70%',
+      display: 'flex',
+      justifyContent: 'center' as const,
+      alignItems: 'center' as const,
+      flexShrink: 0,
+    },
+    icon: {
+      color: 'var(--icon)',
+      fontSize: '30px',
+      cursor: 'pointer',
+      transition: 'color 0.3s',
+    },
+    smallIconContainer: {
+      width: '10%',
+      display: 'flex',
+      justifyContent: 'center' as const,
+      flexShrink: 0,
+    },
+    smallIcon: {
+      color: 'var(--icon)',
+      fontSize: '20px',
+      cursor: 'pointer',
+      transition: 'color 0.3s',
+    },
+    hoverColor: '#ff5733',
   };
 
-  const songInfoStyle = {
-    display: 'flex',
-    alignItems: 'center',
-    flex: 1,
-    overflow: 'hidden',
-  };
-
-  const imageWrapperStyle = {
-    width: '40px',
-    height: '40px',
-    position: 'relative' as 'relative',
-    marginRight: '20px',
-    marginLeft: '5px',
-    flexShrink: 0,
-  };
-
-  const descriptionWrapperStyle = {
-    display: 'flex',
-    flexDirection: 'column' as 'column',
-    overflow: 'hidden',
-    whiteSpace: 'nowrap',
-  };
-
-  const descriptionStyle = {
-    margin: '0px',
-    whiteSpace: 'nowrap',
-    overflow: 'hidden',
-    textOverflow: 'ellipsis',
-    width: '100%',
-  };
-
-  const iconContainerStyle = {
-    width: '70%',
-    display: 'flex',
-    justifyContent: 'center' as 'center',
-    alignItems: 'center' as 'center',
-    flexShrink: 0,
-  };
-
-  const iconStyle = {
-    color: 'var(--icon)',
-    fontSize: '30px',
-    cursor: 'pointer',
-    transition: 'color 0.3s',
-  };
-
-  const iconHoverStyle = {
-    color: '#ff5733',
-  };
-
-  const smallIconContainerStyle = {
-    width: '10%',
-    display: 'flex',
-    justifyContent: 'center' as 'center',
-    flexShrink: 0,
-  };
-
-  const smallIconStyle = {
-    color: 'var(--icon)',
-    fontSize: '20px',
-    cursor: 'pointer',
-    transition: 'color 0.3s',
+  const handleHover = (e: React.MouseEvent, isEntering: boolean) => {
+    (e.currentTarget as HTMLElement).style.color = isEntering
+      ? styles.hoverColor
+      : styles.icon.color;
   };
 
   return (
-    <div style={playbarStyle}>
-      <div style={songInfoStyle}>
-        <div style={imageWrapperStyle}>
-          <Image src={"/portfolio" + currentSong.image} alt="Music-Image" layout="fill" style={{ display: 'inline' }} />
+    <div style={styles.playbar}>
+      <div style={styles.songInfo}>
+        <div style={styles.imageWrapper}>
+          <Image
+            src={"/portfolio" + currentSong.image}
+            alt="Music-Image"
+            layout="fill"
+            style={{ display: 'inline' }}
+          />
         </div>
-        <div style={descriptionWrapperStyle}>
+        <div style={styles.descriptionWrapper}>
           <p style={{ margin: '0px' }}>{currentSong.title}</p>
-          <p style={descriptionStyle}>{currentSong.description}</p>
+          <p style={styles.description}>{currentSong.description}</p>
         </div>
       </div>
-      <div style={iconContainerStyle}>
+
+      <div style={styles.iconContainer}>
         <FontAwesomeIcon
           icon={faBackwardStep}
-          style={iconStyle}
-          onMouseEnter={(e) => e.currentTarget.style.color = iconHoverStyle.color}
-          onMouseLeave={(e) => e.currentTarget.style.color = iconStyle.color}
+          style={styles.icon}
+          onMouseEnter={(e) => handleHover(e, true)}
+          onMouseLeave={(e) => handleHover(e, false)}
           onClick={handleSongBackward}
         />
         <FontAwesomeIcon
           icon={faPause}
-          style={{ ...iconStyle, margin: '25px' }}
-          onMouseEnter={(e) => e.currentTarget.style.color = iconHoverStyle.color}
-          onMouseLeave={(e) => e.currentTarget.style.color = iconStyle.color}
+          style={{ ...styles.icon, margin: '25px' }}
+          onMouseEnter={(e) => handleHover(e, true)}
+          onMouseLeave={(e) => handleHover(e, false)}
           onClick={() => handlePlayButtonClick(true)}
         />
         <FontAwesomeIcon
           icon={faForwardStep}
-          style={iconStyle}
-          onMouseEnter={(e) => e.currentTarget.style.color = iconHoverStyle.color}
-          onMouseLeave={(e) => e.currentTarget.style.color = iconStyle.color}
+          style={styles.icon}
+          onMouseEnter={(e) => handleHover(e, true)}
+          onMouseLeave={(e) => handleHover(e, false)}
           onClick={handleSongForward}
         />
       </div>
-      <div style={smallIconContainerStyle}>
+
+      <div style={styles.smallIconContainer}>
         <FontAwesomeIcon
           icon={faUpRightFromSquare}
-          style={smallIconStyle}
-          onMouseEnter={(e) => e.currentTarget.style.color = iconHoverStyle.color}
-          onMouseLeave={(e) => e.currentTarget.style.color = iconStyle.color}
+          style={styles.smallIcon}
+          onMouseEnter={(e) => handleHover(e, true)}
+          onMouseLeave={(e) => handleHover(e, false)}
           onClick={toggleInfoBar}
         />
       </div>

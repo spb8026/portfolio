@@ -8,6 +8,30 @@
       "songs": [
         {
           "indexx": 0,
+          "title": "Paychex Internship",
+          "description": "(Remote | 1/25 - Current) \n Working on the conversion of legacy Angular components to an inhouse modern component library.",
+          "links": [],
+          "credits": [],
+          "techStack": [
+            {
+              "name": "Angular",
+              "image": "/angular.png"
+            }
+          ],
+          "image": "/paychex.png"
+        },
+        {
+          "indexx": 1,
+          "title": "ITS Service Desk",
+          "description": " (Henrietta, NY | 10/24-Current )\n Providing first-line support for Technology and Accounts within the RIT Community.",
+          "links": [],
+          "credits": [],
+          "techStack": [
+          ],
+          "image": "/servicedesk.png"
+        },
+        {
+          "indexx": 2,
           "title": "Roomates Progressive Web App",
           "description": "Developing a progressive web app in Next.js to be used by roomates. This will include a shared calendar, split payments, a live text chat, as well as the ability to make request to alter/add/exchange chores.",
           "links": [],
@@ -25,7 +49,7 @@
           "image": "/roomates.png"
         },
         {
-          "indexx": 1,
+          "indexx": 3,
           "title": "Arduino Enchanced Beer-Pong Table",
           "description": "Utilizing an Arduino and Ultra-Sonic sensor's to create an enchacned Beer-Pong table.",
           "links": [],
@@ -168,6 +192,30 @@
       "songs": [
         {
           "indexx": 0,
+          "title": "Paychex Internship",
+          "description": "(Remote | 1/25 - Current) \n Working on the conversion of legacy Angular components to an inhouse modern component library.",
+          "links": [],
+          "credits": [],
+          "techStack": [
+            {
+              "name": "Angular",
+              "image": "/angular.png"
+            }
+          ],
+          "image": "/paychex.png"
+        },
+        {
+          "indexx": 1,
+          "title": "ITS Service Desk",
+          "description": " (Henrietta, NY | 10/24-Current )\n Providing first-line support for Technology and Accounts within the RIT Community.",
+          "links": [],
+          "credits": [],
+          "techStack": [
+          ],
+          "image": "/servicedesk.png"
+        },
+        {
+          "indexx": 2,
           "title": "First Citizens Banks Internship",
           "description": "(Morristown, NJ | 5/24 - Current)\n Working with the Enterprise Incident Management Team, I used my skills in application development to create an intuitive application for creating distribution lists, emails, as well as presentations to improve efficiency during an incident, remove tedious tasks, and room for error.",
           "links": [],
@@ -185,7 +233,7 @@
           "image": "/FCB"
         },
         {
-          "indexx": 1,
+          "indexx": 3,
           "title": "Student Note Taker",
           "description": " (Henrietta, NY | 11/22-5/23, 1/24 - Present)\n Working to take accurate and effective notes for NTID students at RIT. I have taken notes for Calc 2, Multivariable Calculus, and Introduction to Software Engineering.",
           "links": [],
@@ -194,7 +242,7 @@
           "image": "/rit.png"
         },
         {
-          "indexx": 2,
+          "indexx": 4,
           "title": "Student Maintenance Worker",
           "description": " (Henrietta, NY | 3/24-5/24)\n Helped take care of the RIT President's property at Liberty Hill.",
           "links": [],
@@ -203,7 +251,7 @@
           "image": "/rit.png"
         },
         {
-          "indexx": 3,
+          "indexx": 5,
           "title": "Domino’s Delivery Driver",
           "description": "(Hamburg, NJ | 7/23-8/23)\n Efficiently delivered and prepared Domino's products for safe and timely customer delivery. ",
           "links": [],
@@ -212,7 +260,7 @@
           "image": "/dominos.png"
         },
         {
-          "indexx": 4,
+          "indexx": 6,
           "title": "Dunkin Crew Member",
           "description": " (Vernon, NJ | 7/23-8/23)\n Accurately created Dunkin' beverages in a fast-paced environment while efficiently satisfying customer needs through proactive interactions.",
           "links": [],
@@ -221,7 +269,7 @@
           "image": "/dunkin.png"
         },
         {
-          "indexx": 5,
+          "indexx": 7,
           "title": "Tall Timbers Maintenance Crew",
           "description": "(Vernon, NJ | 4/21-8/22)\n Performed landscaping, painting, and janitorial duties to maintain clean and presentable grounds, consistently working independently to enhance the aesthetics and functionality of the campground.",
           "links": [],
@@ -230,7 +278,7 @@
           "image": "/tt.png"
         },
         {
-          "indexx": 6,
+          "indexx": 8,
           "title": "Mountain Creek Ski Resrort Cashier",
           "description": "(Vernon, NJ | 12/19-3/20)\n Handled transactions while upselling Season Passes to customers.",
           "links": [],
