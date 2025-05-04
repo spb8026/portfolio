@@ -65,7 +65,7 @@ export default function AboutMe() {
           <div style={styles.infosubContainer}>
             <h2>In the Works</h2>
             {currentPlaylist.songs.map((song, index) => (
-              <Song key={index} song={song} />
+              <Song key={index} song={song} playlist={currentPlaylist}/>
             ))}
           </div>
           <div style={styles.infosubContainer}>
