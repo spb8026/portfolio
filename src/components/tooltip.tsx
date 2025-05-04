@@ -2,11 +2,12 @@ import React, { useState } from 'react';
 
 interface TooltipProps {
   title: string;
-  subtitle: string;
+  subtitle?: string;
+  position: 'top' | 'bottom' | 'left' | 'right';
   children: React.ReactNode;
 }
 
-const Tooltip = ({ title, subtitle, children }: TooltipProps) => {
+const Tooltip = ({ title, subtitle, position, children }: TooltipProps) => {
   const [isHovered, setIsHovered] = useState(false);
 
   const containerStyle: React.CSSProperties = {
@@ -15,28 +16,56 @@ const Tooltip = ({ title, subtitle, children }: TooltipProps) => {
     cursor: 'default',
   };
 
+  const getPositionStyle = (): React.CSSProperties => {
+    switch (position) {
+      case 'top':
+        return {
+          bottom: '100%',
+          left: '50%',
+          transform: 'translateX(-50%) translateY(-8px)',
+        };
+      case 'bottom':
+        return {
+          top: '100%',
+          left: '50%',
+          transform: 'translateX(-50%) translateY(8px)',
+        };
+      case 'left':
+        return {
+          right: '100%',
+          top: '50%',
+          transform: 'translateX(-8px) translateY(-50%)',
+        };
+      case 'right':
+        return {
+          left: '100%',
+          top: '50%',
+          transform: 'translateX(8px) translateY(-50%)',
+        };
+      default:
+        return {};
+    }
+  };
+
   const tooltipStyle: React.CSSProperties = {
     position: 'absolute',
-    top: '50%',
-    left: '100%',
-    transform: 'translateY(-50%)',
-    marginLeft: '8px',
-    backgroundColor: '#1e1e1e', // dark background
-    color: '#ccc', // default text color
+    backgroundColor: '#1e1e1e',
+    color: '#ccc',
     padding: '0.5rem 0.75rem',
     borderRadius: '0.5rem',
     fontSize: '0.875rem',
-    zIndex: 10000,
+    zIndex: 100000000,
     whiteSpace: 'nowrap',
     opacity: isHovered ? 1 : 0,
     visibility: isHovered ? 'visible' : 'hidden',
     transition: 'opacity 0.2s ease, visibility 0.2s ease',
     pointerEvents: 'none',
     boxShadow: '0 2px 10px rgba(0,0,0,0.2)',
+    ...getPositionStyle(),
   };
 
   const titleStyle: React.CSSProperties = {
-    color: '#C22222', // green title
+    color: '#C22222',
     fontWeight: 600,
   };
 

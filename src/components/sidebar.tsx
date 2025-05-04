@@ -76,7 +76,7 @@ const Sidebar = () => {
     const box = (
       <>
         {hasTooltip && (
-          <Tooltip title={title} subtitle={subtitle}>
+          <Tooltip title={title} subtitle={subtitle} position="right">
             <div
               style={{
                 ...styles.box,

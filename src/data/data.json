@@ -9,7 +9,7 @@
         {
           "indexx": 0,
           "title": "Paychex Internship",
-          "description": "(Remote | 1/25 - Current) \n Working on the conversion of legacy Angular components to an inhouse modern component library.",
+          "description": "(Remote | 1/25 - Current) \n Working on the conversion of legacy Angular components to an in-house modern component library.",
           "links": [],
           "credits": [],
           "techStack": [
@@ -77,8 +77,8 @@
         {
           "indexx": 0,
           "title": "Java",
-          "description": "As my main language of choice, I have a wide array of experiances using Java and Object Orinted Programming a a whole. \n Noteable Projects Include: \n -Command Line Monopoly \n Hoppers Game with DFS Solver \n Springboot API for E-Store \n Algorithim and Data Strucutre Implementations (Dynamic Programming, Graphs, Ect.)",
-          "links": ["https://github.com/spb8026/Monopoly, https://github.com/RIT-SWEN-261-006/team-project-2235-swen-261-06-2b-wizards"],
+          "description": "As my main language of choice, I have a wide array of experiances using Java and Object Orinted Programming a a whole. \n Noteable Projects Include: \n -Command Line Monopoly \n -Hoppers Game with DFS Solver \n -Springboot API for E-Store \n -Algorithim and Data Strucutre Implementations (Dynamic Programming, Graphs, Ect.) \n -Fake Programming Lanugage Interpreter \n -AI Map Solver \n -Propositional Lanugage Solver \n -Decesion Tree / Adaboost Trainer and Exectutor",
+          "links": ["https://github.com/spb8026/Monopoly", "https://github.com/RIT-SWEN-261-006/team-project-2235-swen-261-06-2b-wizards", "https://github.com/apc5074/Team12Compiler", "https://github.com/spb8026/Lab2", "https://github.com/spb8026/Lab3", "https://github.com/spb8026/AI_lab1_AStar" ],
           "credits": [],
           "techStack": [],
           "image": "/java.webp"
@@ -86,8 +86,8 @@
         {
           "indexx": 1,
           "title": "Python",
-          "description": "Used within Computer Science I for  basic programming introductions, data anlysis as well as to write scripts for Mock data for a PostgreSQL database using faker",
-          "links": [],
+          "description": "I have mainly used Python as a tool for smaller scripting and data analysis Projects. \n Noteable Proejects Include: \n -Fake User Data Generator for Postgres Music Database using Faker \n -Wikipedia Data Scraper for triaing Decsion Tree / Adaboost Models on lanugage detection \n A plethora of Random Number Generators and Randomness Testers for Math: Simulation and Randomness",
+          "links": ["https://github.com/spb8026/Lab3" ],
           "credits": [],
           "techStack": [],
           "image": "/python.webp"
@@ -122,7 +122,7 @@
         {
           "indexx": 5,
           "title": "Next JS",
-          "description": "Designed this site using Next JS",
+          "description": "Designed this site using Next JS. \n Created a demo application for Email and Distribution List Management for First Citizens Bank using Next JS",
           "links": [],
           "credits": [],
           "techStack": [],
@@ -131,9 +131,9 @@
         {
           "indexx": 6,
           "title": "Angular",
-          "description": "Worked with a team to create a makeshift E-Store using Angular with my focus being on the cart section of the site.",
+          "description": "Worked with a team to create a makeshift E-Store using Angular with my focus being on the cart section of the site. \n Internship at Paychex where I am working on the conversion of legacy Angular components to an inhouse modern component library.",
           "links": ["https://github.com/RIT-SWEN-261-006/team-project-2235-swen-261-06-2b-wizards"],
-          "credits": [],
+          "credits": [], 
           "techStack": [],
           "image": "/angular.png"
         },
@@ -174,7 +174,7 @@
           "image": "/inventor.png"
         },
         {
-          "indexx": 10,
+          "indexx": 11,
           "title": "Photoshop",
           "description": "Used photoshop for making logos, graphics, and editing photos.",
           "links": [],
@@ -217,7 +217,7 @@
         {
           "indexx": 2,
           "title": "First Citizens Banks Internship",
-          "description": "(Morristown, NJ | 5/24 - Current)\n Working with the Enterprise Incident Management Team, I used my skills in application development to create an intuitive application for creating distribution lists, emails, as well as presentations to improve efficiency during an incident, remove tedious tasks, and room for error.",
+          "description": "(Morristown, NJ | 5/24 - 8/24)\n Working with the Enterprise Incident Management Team, I used my skills in application development to create an intuitive application for creating distribution lists, emails, as well as presentations to improve efficiency during an incident, remove tedious tasks, and room for error.",
           "links": [],
           "credits": [],
           "techStack": [
@@ -412,19 +412,23 @@
         {
           "indexx": 8,
           "title": "Intro to Artificial Intelligence",
-          "description": "Introduction to the theory behind modern Artificial Intelligence. \n Project: \n Given a map image where each pixel represents a type of terrain, used A* search to find the most optimal path across goal locations.",
-          "links": ["https://github.com/spb8026/AI_lab1_AStar"],
+          "description": "Introduction to the theory behind modern Artificial Intelligence. \n Project: \n Given a map image where each pixel represents a type of terrain, used A* search to find the most optimal path across goal locations. \n Decesion Tree / Adaboost Trainer and Executor",
+          "links": ["https://github.com/spb8026/AI_lab1_AStar", "https://github.com/spb8026/Lab3"],
           "credits": [],
           "techStack": [
             {
               "name": "Java",
               "image": "/java.webp"
+            },
+            {
+              "name": "Python",
+              "image": "/python.webp"
             }
           ],
           "image": "/AI_map.jpg"
         },
         {
-          "indexx": 8,
+          "indexx": 9,
           "title": "Programming Language Concepts",
           "description": "Overview of how different programming languages are implemented. Learning Scheme, SmallTalk and Bash. \n Project: \n Developing a translator for a fake programming language in Java. ",
           "links": ["https://github.com/apc5074/Team12Compiler"],
@@ -442,7 +446,7 @@
           "image": "/PLC.png"
         },
         {
-          "indexx": 8,
+          "indexx": 10,
           "title": "Intro to Artificial Intelligence",
           "description": "Introduction to the theory behind modern Artificial Intelligence. \n Project: \n Given a map image where each pixel represents a type of terrain, used A* search to find the most optimal path across goal locations.",
           "links": ["https://github.com/spb8026/AI_lab1_AStar"],
@@ -456,7 +460,7 @@
           "image": "/AI_map.jpg"
         },
         {
-          "indexx": 9,
+          "indexx": 11,
           "title": "Graph Theory",
           "description": "Overview of the mathematical theory behind Graph Theory.",
           "links": [],
@@ -466,9 +470,9 @@
           "image": ""
         },
         {
-          "indexx": 10,
+          "indexx": 12,
           "title": "Math: Simulation and Randomness",
-          "description": "Overview of the computational methods for producing random numbers.",
+          "description": "Overview of the computational methods for producing random numbers with a focus on Statistical Analysis using Python.",
           "links": [],
           "credits": [],
           "techStack": [
@@ -498,7 +502,7 @@
           "image": "/monopoly.png"
         },
         {
-          "indexx": 2,
+          "indexx": 1,
           "title": "Web-Design / Social Media Management",
           "description": " (Remote | 7/22-Present)\n Established and managed Instagram and Facebook profiles, resulting in a remarkable 340% growth in followers compared to prior endeavors for Instagram in 2 months. Designed and created a Webflow based site as a basis for information about Bryce Grier's professional trumpet career.",
           "links": [

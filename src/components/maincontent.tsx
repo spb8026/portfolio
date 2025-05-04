@@ -7,6 +7,8 @@ import { useState } from "react";
 import { usePlayer } from '@/context/PlayerContext';
 import { getFontAwesomeIcon } from '../utils/iconUtils';
 import data from '../data/data.json';
+import Tooltip from "./tooltip";
+import { title } from "process";
 
 const playlists = data.playlists;
 
@@ -25,8 +27,8 @@ const MainContent = () => {
   return (
     <div style={{
       height: '100vh',
-      margin: '0 auto',
-      padding: '1.25rem',
+      margin: '0 2rem',
+      padding: '1rem',
       backgroundColor: 'var(--sect-bg)',
     }}>
       {/* Header */}
@@ -39,14 +41,15 @@ const MainContent = () => {
         <Image src="/portfolio/Red-Logo.png" alt="Logo" width={50} height={75} />
         <div style={{ display: 'flex', gap: '1rem' }}>
           {[{
-            href: "mailto:shawnbroderick658@gmail.com", icon: faEnvelope
+            href: "mailto:shawnbroderick658@gmail.com", icon: faEnvelope, title: "Email"
           }, {
-            href: "https://github.com/spb8026", icon: faGithub
+            href: "https://github.com/spb8026", icon: faGithub, title: "GitHub"
           }, {
-            href: "https://www.linkedin.com/in/shawn-broderick-24b736266/", icon: faLinkedin
-          }].map(({ href, icon }, idx) => (
+            href: "https://www.linkedin.com/in/shawn-broderick-24b736266/", icon: faLinkedin, title: "LinkedIn"
+          }].map(({ href, icon, title }, idx) => (
             <a key={idx} href={href} target="_blank" rel="noopener noreferrer">
-              <FontAwesomeIcon
+     <Tooltip title={title} position="bottom">
+     <FontAwesomeIcon
                 icon={icon}
                 style={{
                   color: iconBaseColor,
@@ -57,6 +60,7 @@ const MainContent = () => {
                 onMouseEnter={e => e.currentTarget.style.color = iconHoverColor}
                 onMouseLeave={e => e.currentTarget.style.color = iconBaseColor}
               />
+     </Tooltip>
             </a>
           ))}
         </div>
@@ -157,19 +161,23 @@ const MainContent = () => {
                 width: '100%', height: '100%',
                 zIndex: 1,
               }} />
-              <FontAwesomeIcon
-                icon={faCirclePlay}
-                style={{
-                  position: 'absolute',
-                  right: '1rem',
-                  fontSize: '2.5rem',
-                  color: 'var(--icon)',
-                  opacity: isHovered ? 1 : 0,
-                  transition: 'opacity 0.2s ease',
-                  zIndex: 2,
-                }}
-                onClick={() => handlePlayButtonClick(playlist)}
-              />
+      <Tooltip title="Click to play" position="top">
+  <FontAwesomeIcon
+    icon={faCirclePlay}
+    style={{
+      position: 'absolute',
+      right: '1rem',
+      top: '50%',
+      transform: 'translateY(-50%)',
+      fontSize: '2.5rem',
+      color: 'var(--icon)',
+      opacity: isHovered ? 1 : 0,
+      transition: 'opacity 0.2s ease',
+      zIndex: 2,
+    }}
+    onClick={() => handlePlayButtonClick(playlist)}
+  />
+</Tooltip>
             </div>
           );
         })}

@@ -114,7 +114,7 @@ fontSize: '2vw',
 
         <div style={{ ...styles.songsContainer, ...styles.hideScrollbar }}>
           {playlist.songs.map((song : Song) => (
-            <Song key={song.indexx} song={song} />
+            <Song key={song.indexx} song={song} playlist={playlist} />
           ))}
         </div>
       </div>

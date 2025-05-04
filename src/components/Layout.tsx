@@ -27,10 +27,11 @@ export default function Layout({ children }: LayoutProps) {
       flexShrink: 0,
     },
     mainContainer: {
-      flexGrow: 1,
+      width: '100%',
       display: 'flex',
       flexDirection: 'column',
       overflowY: 'auto',
+      scrollBehavior: 'hidden',
       paddingBottom: '4.5rem', // reserve space for Playbar
       transition: 'all 0.3s ease',
     },

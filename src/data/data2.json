@@ -1,0 +1,546 @@
+{
+    "playlists": [
+      {
+        "id": "ITW",
+        "title": "In The Works",
+        "description": "A highlight of my current achievements.",
+        "icon": "faCalendarDay",
+        "songs": [
+          {
+            "indexx": 0,
+            "title": "Paychex Internship",
+            "description": "(Remote | 1/25 - Current) \n Working on the conversion of legacy Angular components to an inhouse modern component library.",
+            "links": [],
+            "credits": [],
+            "techStack": [
+              {
+                "name": "Angular",
+                "image": "/angular.png"
+              }
+            ],
+            "image": "/paychex.png"
+          },
+          {
+            "indexx": 1,
+            "title": "ITS Service Desk",
+            "description": " (Henrietta, NY | 10/24-Current )\n Providing first-line support for Technology and Accounts within the RIT Community.",
+            "links": [],
+            "credits": [],
+            "techStack": [],
+            "image": "/servicedesk.png"
+          },
+          {
+            "indexx": 2,
+            "title": "Roomates Progressive Web App",
+            "description": "Developing a progressive web app in Next.js to be used by roomates. This will include a shared calendar, split payments, a live text chat, as well as the ability to make request to alter/add/exchange chores.",
+            "links": [],
+            "credits": [],
+            "techStack": [
+              {
+                "name": "Next JS",
+                "image": "/next.svg"
+              },
+              {
+                "name": "Supabase",
+                "image": "/supabase.png"
+              }
+            ],
+            "image": "/roomates.png"
+          },
+          {
+            "indexx": 3,
+            "title": "Arduino Enchanced Beer-Pong Table",
+            "description": "Utilizing an Arduino and Ultra-Sonic sensor's to create an enchacned Beer-Pong table.",
+            "links": [],
+            "credits": [],
+            "techStack": [
+              {
+                "name": "Python ",
+                "image": "/python.jpg"
+              },
+              {
+                "name": "Arduino",
+                "image": "/arduino.png"
+              }
+            ],
+            "image": "/roomates.png"
+          }
+        ]
+      },
+      {
+        "id": "skills",
+        "title": "Skills",
+        "description": "A collection of the major skills/technologies within my toolbelt.",
+        "icon": "faLightbulb",
+        "songs": [
+          {
+            "indexx": 0,
+            "title": "Java",
+            "description": "As my main language of choice, I have a wide array of experiances using Java and Object Orinted Programming a a whole. \n Noteable Projects Include: \n -Command Line Monopoly \n Hoppers Game with DFS Solver \n Springboot API for E-Store \n Algorithim and Data Strucutre Implementations (Dynamic Programming, Graphs, Ect.) \n Fake Programming Lanugage Interpreter \n AI Map Solver \n Decesion Tree / Adaboost Trainer and Exectutor",
+            "links": [
+              "https://github.com/spb8026/Monopoly",
+              "https://github.com/RIT-SWEN-261-006/team-project-2235-swen-261-06-2b-wizards",
+              "https://github.com/apc5074/Team12Compiler"
+            ],
+            "credits": [],
+            "techStack": [],
+            "image": "/java.webp"
+          },
+          {
+            "indexx": 1,
+            "title": "Python",
+            "description": "Used within Computer Science I for  basic programming introductions. Mainly used for small scripting needs and statistical analysis. Used for Mock Data generation using Faker. Used to scrape wikipedia to train a Decesion Tree and AI Model on language detection. ",
+            "links": [],
+            "credits": [],
+            "techStack": [],
+            "image": "/python.webp"
+          },
+          {
+            "indexx": 2,
+            "title": "C",
+            "description": "Used to learn the basic's of low level languages and data manegment. Projects in mechnaics of Programming including building a Hash Table, Asteroids using curses, and a simple social netowrk.",
+            "links": [],
+            "credits": [],
+            "techStack": [],
+            "image": "/c.webp"
+          },
+          {
+            "indexx": 3,
+            "title": "C++",
+            "description": "Basic understanding of Object-Oriented Programming in C++.",
+            "links": [],
+            "credits": [],
+            "techStack": [],
+            "image": "/cpp.png"
+          },
+          {
+            "indexx": 4,
+            "title": "PostgreSQL",
+            "description": "Understanding of both design and implenentation of a database using Postgress.",
+            "links": [],
+            "credits": [],
+            "techStack": [],
+            "image": "/postgre.webp"
+          },
+          {
+            "indexx": 5,
+            "title": "Next JS",
+            "description": "Designed this site using Next JS. \n Created a demo application for Email and Distribution List Management for First Citizens Bank using Next JS",
+            "links": [],
+            "credits": [],
+            "techStack": [],
+            "image": "/next.svg"
+          },
+          {
+            "indexx": 6,
+            "title": "Angular",
+            "description": "Worked with a team to create a makeshift E-Store using Angular with my focus being on the cart section of the site. \n Internship at Paychex where I am working on the conversion of legacy Angular components to an inhouse modern component library.",
+            "links": [
+              "https://github.com/RIT-SWEN-261-006/team-project-2235-swen-261-06-2b-wizards"
+            ],
+            "credits": [],
+            "techStack": [],
+            "image": "/angular.png"
+          },
+          {
+            "indexx": 7,
+            "title": "WebFlow",
+            "description": " Designed personal portfolio website's for peers using Webflow",
+            "links": [
+              "https://jadyns-portfolio-909705.webflow.io/"
+            ],
+            "credits": [],
+            "techStack": [],
+            "image": "/webflow.webp"
+          },
+          {
+            "indexx": 8,
+            "title": "GIT",
+            "description": "Utilized GIT, Github, and GitLab for multiple projects. I have both practice with version control as well as Agile processes for pull requests and code reviews.",
+            "links": [
+              "https://github.com/spb8026"
+            ],
+            "credits": [],
+            "techStack": [],
+            "image": "/git.png"
+          },
+          {
+            "indexx": 9,
+            "title": "Simple Systems Design / VHDL",
+            "description": "Basic understanding of logic systems design physically and using VHDL in a project.",
+            "links": [],
+            "credits": [],
+            "techStack": [],
+            "image": "/circuit.jpg"
+          },
+          {
+            "indexx": 10,
+            "title": "Autodesk Inventor",
+            "description": "Used autodesk for modeling and design of 3D objects within my Blind Turn Detection system Project",
+            "links": [],
+            "credits": [],
+            "techStack": [],
+            "image": "/inventor.png"
+          },
+          {
+            "indexx": 10,
+            "title": "Photoshop",
+            "description": "Used photoshop for making logos, graphics, and editing photos.",
+            "links": [],
+            "credits": [],
+            "techStack": [],
+            "image": "/photoshop.png"
+          }
+        ]
+      },
+      {
+        "id": "work",
+        "title": "Work Experience",
+        "description": "Collection of all my work experience throughout my life.",
+        "icon": "faBriefcase",
+        "songs": [
+          {
+            "indexx": 0,
+            "title": "Paychex Internship",
+            "description": "(Remote | 1/25 - Current) \n Working on the conversion of legacy Angular components to an inhouse modern component library.",
+            "links": [],
+            "credits": [],
+            "techStack": [
+              {
+                "name": "Angular",
+                "image": "/angular.png"
+              }
+            ],
+            "image": "/paychex.png"
+          },
+          {
+            "indexx": 1,
+            "title": "ITS Service Desk",
+            "description": " (Henrietta, NY | 10/24-Current )\n Providing first-line support for Technology and Accounts within the RIT Community.",
+            "links": [],
+            "credits": [],
+            "techStack": [],
+            "image": "/servicedesk.png"
+          },
+          {
+            "indexx": 2,
+            "title": "First Citizens Banks Internship",
+            "description": "(Morristown, NJ | 5/24 - 8/24)\n Working with the Enterprise Incident Management Team, I used my skills in application development to create an intuitive application for creating distribution lists, emails, as well as presentations to improve efficiency during an incident, remove tedious tasks, and room for error.",
+            "links": [],
+            "credits": [],
+            "techStack": [
+              {
+                "name": "Java",
+                "image": "/java.webp"
+              },
+              {
+                "name": "Next JS",
+                "image": "/next.svg"
+              }
+            ],
+            "image": "/FCB"
+          },
+          {
+            "indexx": 3,
+            "title": "Student Note Taker",
+            "description": " (Henrietta, NY | 11/22-5/23, 1/24 - Present)\n Working to take accurate and effective notes for NTID students at RIT. I have taken notes for Calc 2, Multivariable Calculus, and Introduction to Software Engineering.",
+            "links": [],
+            "credits": [],
+            "techStack": [],
+            "image": "/rit.png"
+          },
+          {
+            "indexx": 4,
+            "title": "Student Maintenance Worker",
+            "description": " (Henrietta, NY | 3/24-5/24)\n Helped take care of the RIT President's property at Liberty Hill.",
+            "links": [],
+            "credits": [],
+            "techStack": [],
+            "image": "/rit.png"
+          },
+          {
+            "indexx": 5,
+            "title": "Domino\u2019s Delivery Driver",
+            "description": "(Hamburg, NJ | 7/23-8/23)\n Efficiently delivered and prepared Domino's products for safe and timely customer delivery. ",
+            "links": [],
+            "credits": [],
+            "techStack": [],
+            "image": "/dominos.png"
+          },
+          {
+            "indexx": 6,
+            "title": "Dunkin Crew Member",
+            "description": " (Vernon, NJ | 7/23-8/23)\n Accurately created Dunkin' beverages in a fast-paced environment while efficiently satisfying customer needs through proactive interactions.",
+            "links": [],
+            "credits": [],
+            "techStack": [],
+            "image": "/dunkin.png"
+          },
+          {
+            "indexx": 7,
+            "title": "Tall Timbers Maintenance Crew",
+            "description": "(Vernon, NJ | 4/21-8/22)\n Performed landscaping, painting, and janitorial duties to maintain clean and presentable grounds, consistently working independently to enhance the aesthetics and functionality of the campground.",
+            "links": [],
+            "credits": [],
+            "techStack": [],
+            "image": "/tt.png"
+          },
+          {
+            "indexx": 8,
+            "title": "Mountain Creek Ski Resrort Cashier",
+            "description": "(Vernon, NJ | 12/19-3/20)\n Handled transactions while upselling Season Passes to customers.",
+            "links": [],
+            "credits": [],
+            "techStack": [],
+            "image": "/mountaincreek.jpg"
+          }
+        ]
+      },
+      {
+        "id": "academic",
+        "title": "Academic",
+        "description": "A collection of notable classes I\u2019ve taken and the work done within them.",
+        "icon": "faGraduationCap",
+        "songs": [
+          {
+            "indexx": 0,
+            "title": "Computer Science I",
+            "description": "Introductory computer science course where I learned basic programming concepts while working with Python.",
+            "links": [],
+            "credits": [],
+            "techStack": [
+              {
+                "name": "Python",
+                "image": "/python.jpg"
+              }
+            ],
+            "image": "/CSI.png"
+          },
+          {
+            "indexx": 1,
+            "title": "Computer Science II",
+            "description": "Introductory computer science course where I furthered basic programming concepts within Object-Oriented Programming using Java. Notable projects:\nArboles - Programmed a simple outline for a Virtual Machine capable of processing and executing low-level MAQ instructions using an instruction stack and symbol table,\nPuzzle Solver / Hoppers Game - Programmed a puzzle solver using a Depth First Search for solving simple problem-solving games and encoded the game 'Hoppers' to be playable in both the command line and a GUI version. This game featured a 'Hint' option that utilized the Depth First Search solver to find the most optimal game path to reach a win and display the next possible option for it.",
+            "links": [],
+            "credits": [],
+            "techStack": [
+              {
+                "name": "Java",
+                "image": "/java.webp"
+              }
+            ],
+            "image": "/CSII.png"
+          },
+          {
+            "indexx": 2,
+            "title": "Mechanics of Programming",
+            "description": "Introduction to low-level programming and memory management using C. Notable Projects:\nHashADT: Developed a Hash Table implementation, showcasing expertise in data abstraction.\nBracetopia: Programmed grid city simulation where two groups are placed randomly, the simulation calculates 'happiness' based on neighbor proximity and proceeds to move the members of the simulation. Features dynamic adjustments via command line and can run for preset cycles or indefinitely using 'curses'.\nAmici: Constructed a 'social network' program that manages user interactions such as adding, removing, and friending. Capable of processing input from files or command line and displaying network statistics.\nAsteroids: Coded a simplified version of 'Asteroids' using 'curses' and multi-thread programming.",
+            "links": [],
+            "credits": [],
+            "techStack": [
+              {
+                "name": "C",
+                "image": "/c.webp"
+              }
+            ],
+            "image": "/MOPS.png"
+          },
+          {
+            "indexx": 3,
+            "title": "Computational Problem Solving I",
+            "description": "An introduction to solving simple tasks using programming in C++.",
+            "links": [],
+            "credits": [],
+            "techStack": [
+              {
+                "name": "C++",
+                "image": "/cpp.png"
+              }
+            ],
+            "image": "/CPP.png"
+          },
+          {
+            "indexx": 4,
+            "title": "Introduction to Computer Science Theory",
+            "description": "Introduction to the theoretical practices behind computation.",
+            "links": [],
+            "credits": [],
+            "techStack": [],
+            "image": "/theory.png"
+          },
+          {
+            "indexx": 5,
+            "title": "Analysis of Algorithms",
+            "description": "Introduction to analyzing and using different data structures and algorithms to solve problems. Got experience with using dynamic programming, graph theory, flow theory, time-complexity, as well as P vs NP problems.",
+            "links": [],
+            "credits": [],
+            "techStack": [
+              {
+                "name": "Java",
+                "image": ""
+              }
+            ],
+            "image": "/algos.webp"
+          },
+          {
+            "indexx": 6,
+            "title": "Principles of Data Management",
+            "description": "Introduction to how to design databases with a focus in SQL. Project: Simple command line application for managing a Music database with users.",
+            "links": [],
+            "credits": [],
+            "techStack": [
+              {
+                "name": "PostgreSQL",
+                "image": "/postgre.webp"
+              },
+              {
+                "name": "Java",
+                "image": "/java.webp"
+              }
+            ],
+            "image": "/postgre.webp"
+          },
+          {
+            "indexx": 7,
+            "title": "Intro to Software Engineering",
+            "description": "Semester-long mock-up of a Scrum-Agile process with building an E-Store. For my portion of the project, I focused on building the Cart on the front end while having some interaction with building parts of the Springboot API as well as learning documentation and JavaUnit Testing.",
+            "links": [
+              "https://github.com/RIT-SWEN-261-006/team-project-2235-swen-261-06-2b-wizards"
+            ],
+            "credits": [
+              "Jack Barter",
+              "Joseph Skinner",
+              "Garret Tupper",
+              "Evan Svage"
+            ],
+            "techStack": [
+              {
+                "name": "Angular",
+                "image": "/angular.png"
+              },
+              {
+                "name": "Springboot",
+                "image": "/spring.png"
+              }
+            ],
+            "image": "/SWEN.png"
+          },
+          {
+            "indexx": 8,
+            "title": "Intro to Artificial Intelligence",
+            "description": "Introduction to the theory behind modern Artificial Intelligence. \n Project: \n Given a map image where each pixel represents a type of terrain, used A* search to find the most optimal path across goal locations. \n Decesion Tree / Adaboost Trainer and Executor",
+            "links": [
+              "https://github.com/spb8026/AI_lab1_AStar",
+              "https://github.com/spb8026/Lab3"
+            ],
+            "credits": [],
+            "techStack": [
+              {
+                "name": "Java",
+                "image": "/java.webp"
+              },
+              {
+                "name": "Python",
+                "image": "/python.webp"
+              }
+            ],
+            "image": "/AI_map.jpg"
+          },
+          {
+            "indexx": 8,
+            "title": "Programming Language Concepts",
+            "description": "Overview of how different programming languages are implemented. Learning Scheme, SmallTalk and Bash. \n Project: \n Developing a translator for a fake programming language in Java. ",
+            "links": [
+              "https://github.com/apc5074/Team12Compiler"
+            ],
+            "credits": [],
+            "techStack": [
+              {
+                "name": "Java",
+                "image": "/java.webp"
+              },
+              {
+                "name": "Scheme",
+                "image": "/scheme.svg"
+              }
+            ],
+            "image": "/PLC.png"
+          },
+          {
+            "indexx": 8,
+            "title": "Intro to Artificial Intelligence",
+            "description": "Introduction to the theory behind modern Artificial Intelligence. \n Project: \n Given a map image where each pixel represents a type of terrain, used A* search to find the most optimal path across goal locations.",
+            "links": [
+              "https://github.com/spb8026/AI_lab1_AStar"
+            ],
+            "credits": [],
+            "techStack": [
+              {
+                "name": "Java",
+                "image": "/java.webp"
+              }
+            ],
+            "image": "/AI_map.jpg"
+          },
+          {
+            "indexx": 9,
+            "title": "Graph Theory",
+            "description": "Overview of the mathematical theory behind Graph Theory.",
+            "links": [],
+            "credits": [],
+            "techStack": [],
+            "image": ""
+          },
+          {
+            "indexx": 10,
+            "title": "Math: Simulation and Randomness",
+            "description": "Overview of the computational methods for producing random numbers.",
+            "links": [],
+            "credits": [],
+            "techStack": [],
+            "image": ""
+          }
+        ]
+      },
+      {
+        "id": "projects",
+        "title": "Side Projects",
+        "description": "Side design and devlopment projects.",
+        "icon": "",
+        "songs": [
+          {
+            "indexx": 0,
+            "title": "Command Line Monopoly",
+            "description": "Small project where I re-created Monopoly as a command-line game to practice my object oriented Java skills.",
+            "links": [
+              "https://github.com/spb8026/Monopoly"
+            ],
+            "credits": [],
+            "techStack": [
+              {
+                "name": "Java",
+                "image": "/java.webp"
+              }
+            ],
+            "image": "/monopoly.png"
+          },
+          {
+            "indexx": 2,
+            "title": "Web-Design / Social Media Management",
+            "description": " (Remote | 7/22-Present)\n Established and managed Instagram and Facebook profiles, resulting in a remarkable 340% growth in followers compared to prior endeavors for Instagram in 2 months. Designed and created a Webflow based site as a basis for information about Bryce Grier's professional trumpet career.",
+            "links": [
+              "https://www.instagram.com/talltimbersofficial/",
+              ""
+            ],
+            "credits": [],
+            "techStack": [
+              {
+                "name": "Webflow",
+                "image": "/webflow.webp"
+              }
+            ],
+            "image": "/Red-Logo.png"
+          }
+        ]
+      }
+    ]
+  }

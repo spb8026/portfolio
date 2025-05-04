@@ -7,6 +7,7 @@ import {
   faUpRightFromSquare
 } from "@fortawesome/free-solid-svg-icons";
 import { usePlayer } from '../context/PlayerContext';
+import Tooltip from "./tooltip";
 
 const Playbar = () => {
   const {
@@ -107,6 +108,7 @@ const Playbar = () => {
       </div>
 
       <div style={styles.iconContainer}>
+        <Tooltip title="Skip Backwards" position="top">
         <FontAwesomeIcon
           icon={faBackwardStep}
           style={styles.icon}
@@ -114,6 +116,8 @@ const Playbar = () => {
           onMouseLeave={(e) => handleHover(e, false)}
           onClick={handleSongBackward}
         />
+        </Tooltip>
+        <Tooltip title="Play/Pause" position="top">
         <FontAwesomeIcon
           icon={faPause}
           style={{ ...styles.icon, margin: '25px' }}
@@ -121,6 +125,8 @@ const Playbar = () => {
           onMouseLeave={(e) => handleHover(e, false)}
           onClick={() => handlePlayButtonClick(true)}
         />
+        </Tooltip>
+        <Tooltip title="Skip Foward" position="top">
         <FontAwesomeIcon
           icon={faForwardStep}
           style={styles.icon}
@@ -128,9 +134,11 @@ const Playbar = () => {
           onMouseLeave={(e) => handleHover(e, false)}
           onClick={handleSongForward}
         />
+        </Tooltip>
       </div>
 
       <div style={styles.smallIconContainer}>
+        <Tooltip title="See Sidenav Details" position="top">
         <FontAwesomeIcon
           icon={faUpRightFromSquare}
           style={styles.smallIcon}
@@ -138,6 +146,7 @@ const Playbar = () => {
           onMouseLeave={(e) => handleHover(e, false)}
           onClick={toggleInfoBar}
         />
+        </Tooltip>
       </div>
     </div>
   );

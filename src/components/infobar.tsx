@@ -15,10 +15,11 @@ export default function Infobar({ curSong, curPlaylist }: InfoBarProps) {
 
     const styles: { [key: string]: CSSProperties } = {
         containertemp: {
-            width: "20vw",
+            width: "20rem",
             height: "100vh",
             backgroundColor: 'var(--sect-bg)',
             overflowY: "auto",
+            overflowX: "hidden",
             scrollbarWidth: "none", 
             msOverflowStyle: "none",
             borderLeft: "1vw solid var(--bg)",

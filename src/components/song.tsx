@@ -7,18 +7,20 @@ import data from '../data/data.json';
 
 type SongProps = {
     song: Song;
+    playlist: Playlist;
 };
 
-export default function Song({ song }: SongProps) {
+export default function Song({ song, playlist }: SongProps) {
     const defaultSong = data.playlists[0].songs[0];
     const currentSong = song || defaultSong;
 
     const [isHovered, setIsHovered] = useState(false);
 
-    const { handlePlayButtonClick, handleSongChange } = usePlayer();
+    const { handlePlayButtonClick, handleSongChange, handlePlaylistChange } = usePlayer();
 
     const handlePlayClick = () => {
         handleSongChange(currentSong);
+        handlePlaylistChange(playlist);
         handlePlayButtonClick(true);
     };
 
